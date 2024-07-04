@@ -1,6 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const lenis = new Lenis();
+import Lenis from '@studio-freight/lenis'
 
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM fully loaded and parsed");
+
+    // Initialization code
+    const lenis = new Lenis();
     lenis.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
