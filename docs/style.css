@@ -1,88 +1,50 @@
-h1 {
-    color: black;
-    font-size: 36px;
-    font-weight: 500;
-}
-
-p {
-    color: black;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 150%;
-}
-
-img {
-    width: 100%;
+body, html {
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
     height: 100%;
-    object-fit: cover;
-    background-color: aquamarine;
+    width: 100%; 
+}
+canvas {
+    display: block; 
+    width: 100vw; 
+    height: 100vh; 
 }
 
-.exclusive {
-    background-color: white;
+body{
+    overflow-x: hidden;
 }
 
-.exclusive-header {
-    width: 100%;
-    display: flex;
-    gap: 4em;
+.IMG-CONT:hover > img{ 
+    animation: Pulse 800ms ease-in-out ;
+}
+.IMG-CONT > img{
+     object-fit: cover;
+     
+
 }
 
-.exclusive-header .col:nth-child(1) {
-    flex: 2;
+
+
+.hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; 
+    color: white;
 }
 
-.exclusive-header .col:nth-child(2) {
-    flex: 5;
-    padding: 1em;
+
+
+@keyframes Pulse {
+    from,to {
+        scale:1;
+    }
+    
+    50%{
+        scale:1.08;
+    }
+
+    
 }
 
-.sive {
-    display: flex;
-    gap: 2em;
-    height: 150px;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.sive-info {
-    flex: 2;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1em;
-}
-
-.sive-img {
-    flex: 5;
-    width: 100%;
-    height: 100%;
-    padding: 1em;
-}
-
-img {
-    width: 30%;
-    height: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-/* lenis scroll */
-
-html.lenis,
-html.lenis body {
-    height: 500vh;
-}
-
-.lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-    overflow: hidden;
-}

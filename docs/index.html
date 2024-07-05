@@ -1,113 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taj Hotel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <title>Particle Image Effect</title>
 </head>
-<body class="w-full h-screen bg-white text-black">
-    <section class="exclusive">
-        <div class="exclusive-header">
-            <div class="col"></div>
-            <div class="col"><h1 class="">Distinctively for you</h1></div>
+
+<body>
+
+    <!-- Keep the navigation simplified for now -->
+    <div id="Hoem-page">
+        <nav class="h-[9vmin] w-full flex justify-around absolute items-center">
+            <div id="left-div" class="h-auto w-[60%] flex gap-[6vmin] items-center">
+                <div id="Logo" class="h-[40px] w-[40px] ml-[8vmin]">
+                    <img src="/Images-home/Taj_Hotels_logo.svg.png" alt="">
+                </div>
+                <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[4vmin] ">Destinations</h3>
+                <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[4vmin] ">Hotels</h3>
+                <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[2vmin] hidden ">Dining</h3>
+                <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[2vmin] hidden ">Exclusive for you</h3>
+                <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[2vmin] hidden ">Events</h3>
+                <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[4vmin] ">Explore</h3>
+            </div>
+            <div id="Menu" class="h-auto w-[40%] pr-[2vmin]">
+                <h3 class="text-right font-bold"><i class="ri-menu-5-line "></i>Menu</h3>
+            </div>
+
+        </nav>
+
+        <canvas>
+            <h1 class="text-[15vmin] z-10  text-black top-[20%] font-bold [6%]">Discover <br> Luxury</h1>
+        </canvas>
+
+    </div>
+
+
+    <div class="Card-Scroller h-[100vh] w-[300vw] flex flex-col bg-[#AD8B3A]">
+
+        <div class="Heading-div h-[20%] w-[100vw]  flex justify-center items-center">
+            <h1 class="text-[8vmin] font-bold">Explore More</h1>
         </div>
 
-        <div class="sive">
-            <div class="sive-info">
-                <h1>SOULFUL ABODES</h1>
-                <p>Reconnect with your awaken your inner wisdom and discover a deeper sense of peace as you experience India's spiritual destination</p>
-            </div>
-            <div class="sive-img">
-                <img src="https://images.unsplash.com/photo-1719922326745-0ba9484d02e2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-            </div>
+        <div class="Card-div h-[80%] w-auto overflow-hidden flex justify-center items-center">
+            <div class="Card h-full w-[60vw] flex justify-center items-center">
+                <div class="IMG-CONT h-[60vmin] w-[70vmin]  rounded overflow-hidden relative">
+                    <img class="object-cover" src="/Images-home/architecture-6646154.jpg" alt="">
+                    <div class="hover-text text-[8vmin] font-bold hidden">City Hotels</div>
+                    <div class="text-button w-full flex justify-between items-center p-[2vmin]">
+                        <h4 class="h-[1vmin] w-[60%] text-white">HAVENS OF LUXURY
+                            AND COMFORT , Renowned as city landmarks</h4>
+                        <button class="h-auto w-auto text-black p-[2vmin] rounded-full bg-white mt-[3vmin]">Learn More</button>
+                    </div>
+                </div>
+             </div>
+             <div class="Card h-full w-[60vw] flex justify-center items-center">
+                <div class="IMG-CONT h-[60vmin] w-[70vmin]  rounded overflow-hidden relative">
+                    <img class="object-cover" src="https://images.unsplash.com/photo-1502208327471-d5dde4d78995?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <div class="hover-text text-[8vmin] font-bold hidden">Idyllic Resort</div>
+                    <div class="text-button w-full flex justify-between items-center p-[2vmin]">
+                        <h4 class="h-[1vmin] w-[60%] text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h4>
+                        <button class="h-auto w-auto text-black p-[2vmin] rounded-full bg-white mt-[3vmin]">Learn More</button>
+                    </div>
+                </div>
+             </div>
+             <div class="Card h-full w-[60vw] flex justify-center items-center">
+                <div class="IMG-CONT h-[60vmin] w-[70vmin]  rounded overflow-hidden relative">
+                    <img class="object-cover" src="https://images.unsplash.com/photo-1455587734955-081b22074882?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <div class="hover-text text-[8vmin] font-bold hidden">NEW HOTEL OPENINGS</div>
+                    <div class="text-button w-full flex justify-between items-center p-[2vmin]">
+                        <h4 class="h-[1vmin] w-[60%] text-white">Joins at our newest hotels as we set foot in new destination and create unmissable landmarks.                        </h4>
+                        <button class="h-auto w-auto text-black p-[2vmin] rounded-full bg-white mt-[3vmin]">Learn More</button>
+                    </div>
+                </div>
+             </div>
+             <div class="Card h-full w-[60vw] flex justify-center items-center">
+                <div class="IMG-CONT h-[60vmin] w-[70vmin]  rounded overflow-hidden relative">
+                    <img class="" src="/Images-home/image5.jpg" alt="">
+                    <div class="hover-text text-[8vmin] font-bold hidden">Living places</div>
+                    <div class="text-button w-full flex justify-between items-center p-[2vmin]">
+                        <h4 class="h-[1vmin] w-[60%] text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h4>
+                        <button class="h-auto w-auto text-black p-[2vmin] rounded-full bg-white mt-[3vmin]">Learn More</button>
+                    </div>
+                </div>
+             </div>
+             <div class="Card h-full w-[60vw] flex justify-center items-center">
+                <div class="IMG-CONT h-[60vmin] w-[70vmin]  rounded overflow-hidden relative">
+                    <img class="object-cover" src="/Images-home/architecture-6646154.jpg" alt="">
+                    <div class="hover-text text-[8vmin] font-bold hidden">Sample Text</div>
+                    <div class="text-button w-full flex justify-between items-center p-[2vmin]">
+                        <h4 class="h-[1vmin] w-[60%] text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h4>
+                        <button class="h-auto w-auto text-black p-[2vmin] rounded-full bg-white mt-[3vmin]">Learn More</button>
+                    </div>
+                </div>
+             </div>
         </div>
 
-        <div class="sive">
-            <div class="sive-info">
-                <h1>SOULFUL ABODES</h1>
-                <p>Reconnect with your awaken your inner wisdom and discover a deeper sense of peace as you experience India's spiritual destination</p>
-            </div>
-            <div class="sive-img">
-                <img src="https://images.unsplash.com/photo-1719922326745-0ba9484d02e2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-            </div>
-        </div>
 
-        <div class="sive">
-            <div class="sive-info">
-                <h1>SOULFUL ABODES</h1>
-                <p>Reconnect with your awaken your inner wisdom and discover a deeper sense of peace as you experience India's spiritual destination</p>
-            </div>
-            <div class="sive-img">
-                <img src="https://images.unsplash.com/photo-1719922326745-0ba9484d02e2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-            </div>
-        </div>
 
-        <div class="sive">
-            <div class="sive-info">
-                <h1>SOULFUL ABODES</h1>
-                <p>Reconnect with your awaken your inner wisdom and discover a deeper sense of peace as you experience India's spiritual destination</p>
-            </div>
-            <div class="sive-img">
-                <img src="https://images.unsplash.com/photo-1719922326745-0ba9484d02e2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-            </div>
-        </div>
-
-        <div class="sive">
-            <div class="sive-info">
-                <h1>SOULFUL ABODES</h1>
-                <p>Reconnect with your awaken your inner wisdom and discover a deeper sense of peace as you experience India's spiritual destination</p>
-            </div>
-            <div class="sive-img">
-                <img src="https://images.unsplash.com/photo-1719922326745-0ba9484d02e2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-            </div>
-        </div>
-
-        <div class="sive">
-            <div class="sive-info">
-                <h1>SOULFUL ABODES</h1>
-                <p>Reconnect with your awaken your inner wisdom and discover a deeper sense of peace as you experience India's spiritual destination</p>
-            </div>
-            <div class="sive-img">
-                <img src="https://images.unsplash.com/photo-1719922326745-0ba9484d02e2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-            </div>
-        </div>
-
-        <div class="sive">
-            <div class="sive-info">
-                <h1>SOULFUL ABODES</h1>
-                <p>Reconnect with your awaken your inner wisdom and discover a deeper sense of peace as you experience India's spiritual destination</p>
-            </div>
-            <div class="sive-img">
-                <img src="https://images.unsplash.com/photo-1719922326745-0ba9484d02e2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-            </div>
-        </div>
-
-        <div class="sive">
-            <div class="sive-info">
-                <h1>SOULFUL ABODES</h1>
-                <p>Reconnect with your awaken your inner wisdom and discover a deeper sense of peace as you experience India's spiritual destination</p>
-            </div>
-            <div class="sive-img">
-                <img src="https://images.unsplash.com/photo-1719922326745-0ba9484d02e2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Load necessary libraries first -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
-        integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
-        integrity="sha512-A64Nik4Ql7/W/PJk2RNOmVyC/Chobn5TY08CiKEX50Sdw+33WTOpPJ/63bfWPl0hxiRv1trPs5prKO8CpA7VNQ=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@0.2.0"></script>
-
-    <!-- Load custom scripts last -->
     <script src="script.js"></script>
 </body>
+
 </html>
