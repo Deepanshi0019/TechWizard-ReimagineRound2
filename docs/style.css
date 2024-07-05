@@ -1,3 +1,8 @@
+*{
+    scroll-behavior: smooth;
+}
+
+
 body, html {
     margin: 0;
     padding: 0;
@@ -32,7 +37,19 @@ body{
     left: 0;
     pointer-events: none; 
     color: white;
+    overflow: hidden;
+    text-align: center;
 }
+
+.image-text {
+    font-size: 16vmin;
+    color: transparent; /* Make the text transparent */
+    background: url('https://plus.unsplash.com/premium_photo-1697730270201-bdfc5b81a675?q=80&w=2736&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
 
 
 
