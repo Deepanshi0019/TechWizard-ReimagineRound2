@@ -1,0 +1,74 @@
+:root{
+    --copper: #AD8B3A;
+    --black: black;
+    --white: white;
+}
+body[theme="black"]{
+    background-color: var(--black);
+}
+body[theme="black"] .section{
+    color: var(--copper);
+}
+body[theme="white"]{
+    background-color: var(--white);
+}
+body[theme="white"] .section{
+    color: var(--black);
+}
+
+.slide .img-wrapper {
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide .img-wrapper:nth-child(1) {
+    transform: scale(1);
+    z-index: 1;
+}
+
+.slide .img-wrapper:nth-child(2) {
+    transform: scale(1.5);
+    z-index: 3;
+}
+
+.slide .img-wrapper:nth-child(3) {
+    transform: scale(1);
+    z-index: 1;
+}
+.slide .text{
+    z-index: 2;
+}
+.bw-to-color {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.bw-to-color:hover {
+    filter: grayscale(0%);
+}
+.elem{
+    width: 100%;
+}
+.elem img{
+    opacity: 0;
+    transition: all ease-out 0.5s;
+    transform: translateY(10%) rotate(2deg);
+}
+.elem h1{
+    transition: all ease-out 0.5s;
+}
+.elem:hover h1{
+    transform: translateY(-100%);
+    color: #AD8B3A;
+}
+.elem:hover img{
+    opacity: 1;
+    transform: translateY(0%) rotate(0deg);
+}
+
+
+/* RESPONSIVE */
+@media (max-width:1022px){
+    
+}
+
+
