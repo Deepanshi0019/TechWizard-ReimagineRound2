@@ -1,25 +1,77 @@
 *{
     scroll-behavior: smooth;
 }
+.nanum-myeongjo-regular {
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.bodoni-moda-sc-{
+    font-family: "Bodoni Moda SC", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 
+
+  body::-webkit-scrollbar{
+      display: none;
+  }
 body, html {
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
     height: 100%;
     width: 100%; 
 }
-canvas {
-    display: block; 
-    width: 100vw; 
-    height: 100vh; 
-}
-
 body{
     overflow-x: hidden;
 }
 
+/* Homepage css */
+
+.mouse{
+    animation: updaown 4s infinite;
+}
+.Left-Right-nav-text{
+    display: none;
+}
+.arrow{
+    animation: leftright 4s infinite;
+}
+#The-ragister-div2{
+    display: none;
+}
+
+@keyframes leftright {
+    0%{
+        transform: translateX(-20%);
+    }
+    50%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-20%);
+        
+    }
+}
+@keyframes updaown {
+    0%{
+        transform: translateY(-20%);
+    }
+    50%{
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-20%);
+        
+    }
+}
+
+
+
+
+/* Explore more page css */
 .IMG-CONT:hover > img{ 
     animation: Pulse 800ms ease-in-out ;
 }
@@ -63,5 +115,21 @@ body{
     }
 
     
+}
+
+
+
+@media (min-width:768px) {
+    
+    .Left-Right-nav-text{
+        display: block;
+        display: flex;
+    }
+    #The-ragister-div2{
+        display: block;
+        display: flex;
+
+    }
+
 }
 

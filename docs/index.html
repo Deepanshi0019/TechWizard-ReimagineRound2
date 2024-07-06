@@ -1,50 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Particle Image Effect</title>
-</head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap");
+    </style>
+  </head>
 
-<body>
-
+  <body>
     <!-- Keep the navigation simplified for now -->
-    <nav class="h-[9vmin] w-full flex justify-around absolute items-center">
-        <div id="left-div" class="h-auto w-[60%] flex gap-[6vmin] items-center">
-            <div id="Logo" class="h-[40px] w-[40px] ml-[8vmin]">
-                <img src="/Images-home/Taj_Hotels_logo.svg.png" alt="">
-            </div>
-            <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[4vmin] ">Destinations</h3>
-            <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[4vmin] ">Hotels</h3>
-            <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[2vmin] hidden ">Dining</h3>
-            <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[2vmin] hidden ">Exclusive for you</h3>
-            <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[2vmin] hidden ">Events</h3>
-            <h3 class="font-bold hover:text-[#AD8B3A] transition-colors text-[4vmin] ">Explore</h3>
-        </div>
-        <div id="Menu" class="h-auto w-[40%] pr-[2vmin]">
-            <h3 class="text-right font-bold"><i class="ri-menu-5-line "></i>Menu</h3>
-        </div>
+    <nav
+      class="h-[60px] w-full absolute gap-3 top-0 flex justify-between md:justify-evenly items-center px-[4vmin] nanum-myeongjo-regular text-white"
+    >
+      <div
+        class="Left-Right-nav-text pl-[2vmin] h-auto w-auto justify-center items-center gap-[9vmin] text-[3vmin]"
+      >
+        <h1>Home</h1>
+        <h1>Destination</h1>
+      </div>
+      <img
+        class="h-[10vmin] mt-4 w-[10vmin] sm:h-[5vmin] sm:w-[5vmin] md:h-[8vmin] md:w-[8vmin]"
+        src="/Images-home/Taj_Hotels_logo.svg.png"
+        alt=""
+      />
+      <div class="text-center flex flex-col items-center pt-[2vmin] md:hidden">
+        <h1 class="text-[8vmin] font-bold">Taj Hotels</h1>
+        <h4>Icon of luxery</h4>
+      </div>
 
+      <div
+        class="Left-Right-nav-text pl-[2vmin] h-auto w-auto justify-start items-center gap-[9vmin] text-[3vmin]"
+      >
+        <h1>Daining</h1>
+        <h1>Hotels</h1>
+      </div>
+      <i class="ri-menu-3-line text-[6vmin] md:hidden"></i>
     </nav>
-    <div id="Hoem-page">
-
-        <canvas>
-            <h1 class="text-[15vmin] z-10  text-black top-[20%] font-bold [6%]">Discover <br> Luxury</h1>
-        </canvas>
-
+    <div
+      id="Home-page-section"
+      class="h-[100vh] w-[100vw] flex flex-col justify-center items-center"
+      style="
+        background-image: url(/Images-home/Background.avif);
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        background-repeat: no-repeat;
+      "
+    >
+      <div
+        id="Text-div"
+        class="h-[60%] w-auto flex mb-[8vmin] flex-col text-white justify-center items-center bodoni-moda-sc-"
+      >
+        <h1 class="text-[10vmin]">Taj Hotels</h1>
+        <h1 class="flex items-center text-[4vmin] gap-[2vmin]">
+          <span>Luxery •</span> Wellness • <span>Unforgettable Moments </span>
+        </h1>
+      </div>
+      <div id="The-ragister-div" class="h-[40%] w-auto sm:hidden">
+        <div
+          class="bg-white rounded-full opacity-90 border-[2px] border-[#AD8B3A] flex flex-col justify-center items-center"
+        >
+          <h1 class="p-[10vmin] pb-0 nanum-myeongjo-regular">Explore</h1>
+          <i class="ri-scroll-to-bottom-fill mouse text-[10vmin]"></i>
+        </div>
+      </div>
+      <div id="The-ragister-div2" class="h-[40%] w-auto">
+        <div
+          class="h-[20%] w-[100%] bg-white rounded-full opacity-90 border-[2px] border-[#AD8B3A] flex gap-[3vmin] px-[2vmin] justify-center items-center"
+        >
+          <h1 class="nanum-myeongjo-regular">Discover India's Global Icon</h1>
+          <i
+            class="arrow ri-arrow-right-line h-[5vmin] w-[5vmin] text-center flex items-center justify-center rounded-full bg-[#AD8B3A]"
+          ></i>
+        </div>
+      </div>
     </div>
 
-
-    <div class="Card-Scroller h-[100vh] w-[300vw] flex flex-col bg-white">
+    <!-- <div class="Card-Scroller h-[100vh] w-[100vw] md:w-[300vw] flex flex-col bg-white">
 
         <div class="Heading-div h-[20%] w-[100vw]  flex justify-center items-center">
             <h1 class="text-[8vmin] font-bold">Explore More</h1>
         </div>
 
-        <div class="Card-div h-[80%] w-auto overflow-hidden flex justify-center items-center">
+        <div class="Card-div h-[80%] w-auto overflow-hidden flex flex-col md:flex-row justify-center items-center">
             <div class="Card h-full w-[60vw] flex justify-center items-center">
                 <div class="IMG-CONT h-[60vmin] w-[70vmin]  rounded  relative">
                     <img class="object-cover" src="/Images-home/architecture-6646154.jpg" alt="">
@@ -110,14 +157,19 @@
 
 
 
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </div> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
