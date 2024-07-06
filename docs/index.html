@@ -9,14 +9,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Particle Image Effect</title>
+    <title>Taj Hotels</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap");
     </style>
+
   </head>
 
   <body>
+    <canvas id="waveCanvas"></canvas>
+
     <!-- Keep the navigation simplified for now -->
     <nav
       class="h-[60px] w-full absolute gap-3 top-0 flex justify-between md:justify-evenly items-center px-[4vmin] nanum-myeongjo-regular text-white"
@@ -49,7 +52,7 @@
       id="Home-page-section"
       class="h-[100vh] w-[100vw] flex flex-col justify-center items-center"
       style="
-        background-image: url(/Images-home/Background.avif);
+        background-image: url();
         background-position: center;
         background-size: cover;
         object-fit: cover;
@@ -158,6 +161,8 @@
 
 
     </div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
       integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
