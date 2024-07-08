@@ -1,266 +1,195 @@
-/* General Styles */
-* {
+*{
     scroll-behavior: smooth;
+    
 }
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%; 
-    overflow-x: hidden;
-}
-
-body::-webkit-scrollbar {
-    display: none;
-}
-
-*::selection {
-    background-color: #B5944A;
-    color: white;
-}
-
-/* Font Styles */
 .nanum-myeongjo-regular {
     font-family: "Nanum Myeongjo", serif;
     font-weight: 400;
     font-style: normal;
 }
-
-.bodoni-moda-sc- {
+.bodoni-moda-sc-{
     font-family: "Bodoni Moda SC", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
-
-/* Home Page Styles */
-#waveCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Behind all other content */
-}
-
-#Home-page-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    object-fit: cover;
-}
-
-#Text-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 60%;
-    width: auto;
-    margin-bottom: 8vmin;
+*::selection{
+    background-color: #B5944A;
     color: white;
 }
 
-#The-ragister-div {
-    height: 40%;
-    width: auto;
-    display: none; /* Initially hidden */
-}
 
-#The-ragister-div2 {
-    display: none; /* Initially hidden */
-    height: 40%;
-    width: auto;
-}
+  body::-webkit-scrollbar{
+      display: none;
+    }
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%; 
+    }
+    body{
+        overflow-x: hidden;
+    }
+    
+    /* Homepage css */
+    #waveCanvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Behind all other content */
+    }
 
-.mouse {
+.mouse{
     animation: updaown 4s infinite;
 }
-
-.arrow {
-    animation: leftright 4s infinite;
-}
-
-/* Navigation Styles */
-.Left-Right-nav-text {
+.Left-Right-nav-text{
     display: none;
 }
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 2;
-    gap: 3vmin;
-    padding: 0 4vmin;
-    color: white;
-    font-family: "Nanum Myeongjo", serif;
-    font-weight: 400;
-    font-style: normal;
+.arrow{
+    animation: leftright 4s infinite;
 }
-
-nav .Left-Right-nav-text {
-    padding-left: 2vmin;
-    gap: 9vmin;
-    font-size: 3vmin;
-    display: flex;
+#The-ragister-div2{
+    display: none;
 }
-
-nav img {
-    height: 10vmin;
-    width: 10vmin;
-    margin-top: 4vmin;
-}
-
-nav .text-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 2vmin;
-    display: none; /* Hidden on larger screens */
-}
-
-nav #Menu-button {
-    font-size: 6vmin;
-}
-
-/* Opened Navigation (Responsive) */
 #opened-nav {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    display: none; /* Initially hidden */
     justify-content: center;
     align-items: center;
-    background-color: gray;
-    flex-direction: column;
     gap: 3vmin;
-    z-index: 1;
-    transition: max-height 0.3s ease-out;
-    max-height: 0;
-}
+    flex-direction: column;
+    display: none;
+    transition: max-height 0.3s ease-out; /* Animation transition for max-height */
+    max-height: 0; /* Initially hidden */
 
+}
 #opened-nav.visible {
     display: flex;
-    max-height: 100vh;
+    max-height: 100vh; /* Show full height */
 }
 
-/* Animations */
+
+
+/* Adjust text size for responsiveness */
+
+
 @keyframes leftright {
-    0% {
+    0%{
         transform: translateX(-20%);
     }
-    50% {
+    50%{
         transform: translateX(0%);
     }
-    100% {
+    100%{
         transform: translateX(-20%);
+        
     }
 }
-
 @keyframes updaown {
-    0% {
+    0%{
         transform: translateY(-20%);
     }
-    50% {
+    50%{
         transform: translateY(0%);
     }
-    100% {
+    100%{
         transform: translateY(-20%);
+        
     }
 }
 
-/* Explore More Page Styles */
+
+
+
+/* Explore more page css */
+.IMG-CONT:hover > img{ 
+    animation: Pulse 800ms ease-in-out ;
+}
+.IMG-CONT > img{
+     object-fit: cover;
+     
+
+}
+
+
+
+
+
+
+
+@keyframes Pulse {
+    from,to {
+        scale:1;
+    }
+    
+    50%{
+        scale:1.08;
+    }
+
+    
+}
 .Second-page {
     position: relative;
-    padding: 6vmin;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80%;
-    width: 100%;
-    color: black;
-    font-family: "Nanum Myeongjo", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.Preview {
+    /* overflow: hidden; */
+  }
+  
+  .Preview {
     position: absolute;
-    width: 40vmin;
-    height: 40vmin;
+    /* pointer-events: none; */
     transform-origin: center;
     transition: transform 0.3s ease-out;
-}
+  }
 
-.Preview-img {
+  
+  .Preview-img {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     transition: opacity 0.3s ease-in-out;
-}
+  }
+  
 
-.Project {
+.Project{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
-    border-bottom: 2px solid black;
+    border-bottom: 2px black solid;
     padding-bottom: 2vmin;
 }
-
-.projects {
+.projects{
     display: flex;
     flex-direction: column;
     gap: 7vmin;
 }
+.heading{
 
-.heading, .para {
+  height: 100%;
+  width: 100%;
+}
+.para{
     width: 100%;
+    display: flex;
+    align-items: end;
+}
+.heading,
+.para{
     font-size: 3vmin;
 }
 
-.para {
-    display: flex;
-    align-items: flex-end;
-}
-
-.IMG-CONT:hover > img {
-    animation: Pulse 800ms ease-in-out;
-}
-
-.IMG-CONT > img {
-    object-fit: cover;
-}
-
-@keyframes Pulse {
-    from, to {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.08);
-    }
-}
-
-/* Media Queries */
-@media (min-width: 768px) {
-    .Left-Right-nav-text {
+@media (min-width:768px) {
+    
+    .Left-Right-nav-text{
+        display: block;
         display: flex;
     }
-    #The-ragister-div2 {
+    #The-ragister-div2{
+        display: block;
         display: flex;
+
     }
+
 }
