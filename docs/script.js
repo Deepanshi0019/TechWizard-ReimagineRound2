@@ -1,82 +1,40 @@
-  // Homepage script starts from here ///
-
-
-
-
+// Homepage script starts from here ///
 //Homepage script ends here //
 
-
-
 //Explore more starts from here//
-
-gsap.to(".Card-Scroller .Card-div",{
-    transform:"translateX(-64%)",
-    scrollTrigger:{
-     trigger:".Card-Scroller",
-     scroller:"body",
-     scrub:2,
-     start:"top 0%",
-     end:"top -150%",
-     markers:false,
-     pin:true
-    }
- })
-
-
-
- 
-let imgs = document.querySelectorAll(".IMG-CONT");
-let texts = document.querySelectorAll(".hover-text");
-
-imgs.forEach((img, index) => {
-    img.addEventListener("mousemove", function(event) {
-        texts[index].classList.remove('hidden');
-        gsap.to(texts[index], {
-            x: event.offsetX,
-            y: event.offsetY,
-            duration: 0.3,
-            ease: "ease.in",
-            
-        });
-    });
-
-    img.addEventListener('mouseleave', function() {
-        texts[index].classList.add('hidden');
-    });
-});
-
-
-//   Working fine ==========//
 // Ensure PIXI is loaded
-if (typeof PIXI !== 'undefined') {
-    console.log('PIXI.js is loaded correctly.');
+if (typeof PIXI !== "undefined") {
+  console.log("PIXI.js is loaded correctly.");
 
-    // Initialize PIXI Application
-    const app = new PIXI.Application({
-        view: document.getElementById('waveCanvas'),
-        width: window.innerWidth,
-        height: window.innerHeight,
-        transparent: true,
-    });
+  // Initialize PIXI Application
+  const app = new PIXI.Application({
+    view: document.getElementById("waveCanvas"),
+    width: window.innerWidth,
+    height: window.innerHeight,
+    transparent: true,
+    antialias: true, // Enable antialiasing for better visual quality
+  });
 
-    // Resize the canvas on window resize
-    window.addEventListener('resize', () => {
-        app.renderer.resize(window.innerWidth, window.innerHeight);
-    });
-
-    // Create the wave sprite
-    const waveTexture = PIXI.Texture.from('/Images-home/Background.avif'); // Use your background image or a suitable texture
-    const waveSprite = new PIXI.Sprite(waveTexture);
-
-    // Scale to fit the screen
+  // Resize the canvas on window resize
+  window.addEventListener("resize", () => {
+    app.renderer.resize(window.innerWidth, window.innerHeight);
     waveSprite.width = app.screen.width;
     waveSprite.height = app.screen.height;
+  });
 
-    // Add the sprite to the PIXI stage
-    app.stage.addChild(waveSprite);
+  // Create the wave sprite
+  const waveTexture = PIXI.Texture.from("/Images-home/Background.avif"); // Use your background image or a suitable texture
+  const waveSprite = new PIXI.Sprite(waveTexture);
 
-    // Create a filter to apply the wave effect
-    const vertexShader = `
+  // Scale to fit the screen
+  waveSprite.width = app.screen.width;
+  waveSprite.height = app.screen.height;
+
+  // Add the sprite to the PIXI stage
+  app.stage.addChild(waveSprite);
+
+  // Create a filter to apply the wave effect
+  const vertexShader = `
         attribute vec2 aVertexPosition;
         attribute vec2 aTextureCoord;
         uniform mat3 projectionMatrix;
@@ -88,7 +46,7 @@ if (typeof PIXI !== 'undefined') {
         }
     `;
 
-    const fragmentShader = `
+  const fragmentShader = `
         varying vec2 vTextureCoord;
         uniform sampler2D uSampler;
         uniform float time;
@@ -100,17 +58,295 @@ if (typeof PIXI !== 'undefined') {
         }
     `;
 
-    const waveFilter = new PIXI.Filter(vertexShader, fragmentShader, {
-        time: 0,
-    });
+  const waveFilter = new PIXI.Filter(vertexShader, fragmentShader, {
+    time: 0,
+  });
 
-    // Apply the filter to the wave sprite
-    waveSprite.filters = [waveFilter];
+  // Apply the filter to the wave sprite
+  waveSprite.filters = [waveFilter];
 
-    // Animate the wave effect
-    app.ticker.add((delta) => {
-        waveFilter.uniforms.time += 0.01 * delta; // Adjust the wave speed here
-    });
+  // Animate the wave effect
+  app.ticker.add((delta) => {
+    waveFilter.uniforms.time += 0.01 * delta; // Adjust the wave speed here
+  });
 } else {
-    console.error('PIXI.js library is not loaded properly.');
-}   
+  console.error("PIXI.js library is not loaded properly.");
+}
+
+const Menu_Button = document.getElementById("Menu-button");
+const OpenedNav = document.getElementById("opened-nav");
+
+let click = false;
+
+Menu_Button.addEventListener("click", function () {
+  click = !click;
+
+  if (click) {
+    OpenedNav.style.display = "flex";
+    OpenedNav.classList.add("visible");
+  } else {
+    OpenedNav.style.display = "none";
+    OpenedNav.classList.remove("visible");
+  }
+});
+
+
+
+
+
+
+
+
+// const projects = document.querySelectorAll(".Project");
+// const preview = document.querySelector(".Preview");
+// const previewImage = document.querySelector(".Preview-img");
+
+// if (!projects.length || !preview || !previewImage) {
+//   console.error("One or more elements were not found:", {
+//     projectsLength: projects.length,
+//     preview,
+//     previewImage,
+//   });
+// }
+
+// const offsetX = 20; // Adjust this value to move the image slightly away from the cursor
+// const offsetY = 20; // Adjust this value to move the image slightly away from the cursor
+
+// const showPreview = () => {
+//   gsap.to(preview, { duration: 0.3, scale: 1 });
+// };
+
+// const hidePreview = () => {
+//   gsap.to(preview, { duration: 0.3, scale: 0 });
+// };
+
+// const movePreview = (e) => {
+//   gsap.to(preview, { duration: 0.1, left: `${e.pageX + offsetX}px`, top: `${e.pageY + offsetY}px` });
+// };
+
+// const changePreviewImage = (bgUrl) => {
+//   gsap.to(previewImage, { duration: 0.3, opacity: 0, onComplete: () => {
+//     previewImage.style.backgroundImage = `url(${bgUrl})`;
+//     gsap.to(previewImage, { duration: 0.3, opacity: 1 });
+//   }});
+// };
+
+// projects.forEach(project => {
+//   project.addEventListener('mouseenter', (e) => {
+//     showPreview();
+//     movePreview(e);
+//     changePreviewImage(project.getAttribute('data-bg'));
+//   });
+
+//   project.addEventListener('mousemove', movePreview);
+
+//   project.addEventListener('mouseleave', hidePreview);
+// });
+
+
+
+
+// const projects = document.querySelectorAll(".Project");
+// const preview = document.querySelector(".Preview");
+// const previewImage = document.querySelector(".Preview-img");
+
+// if (!projects.length || !preview || !previewImage) {
+//   console.error("One or more elements were not found:", {
+//     projectsLength: projects.length,
+//     preview,
+//     previewImage,
+//   });
+// }
+
+// let isInside = false;
+
+// const showPreview = () => {
+//   gsap.to(preview, { duration: 1, scale: 1 });
+// };
+
+// const hidePreview = () => {
+//   gsap.to(preview, { duration: 1, scale: 0 });
+// };
+
+// const movePreview = (e) => {
+//   const offsetX = preview.offsetWidth / 2;
+//   const offsetY = preview.offsetHeight / 2;
+//   gsap.to(preview, { duration: 0.3, left: `${e.clientX - offsetX}px`, top: `${e.clientY - offsetY}px` });
+// };
+
+// const changePreviewImage = (bgUrl) => {
+//   gsap.to(previewImage, { duration: 0.3, opacity: 0, onComplete: () => {
+//     previewImage.style.backgroundImage = `url(${bgUrl})`;
+//     gsap.to(previewImage, { duration: 0.3, opacity: 1 });
+//   }});
+// };
+
+// projects.forEach(project => {
+//   project.addEventListener('mouseenter', (e) => {
+//     showPreview();
+//     movePreview(e);
+//     changePreviewImage(project.getAttribute('data-bg'));
+//   });
+
+//   project.addEventListener('mouseenter', movePreview);
+
+//   project.addEventListener('mouseleave', hidePreview);
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const projects = document.querySelectorAll(".Project");
+// const preview = document.querySelector(".Preview");
+// const previewImage = document.querySelector(".Preview-img");
+
+// if (!projects.length || !preview || !previewImage) {
+//   console.error("One or more elements were not found:", {
+//     projectsLength: projects.length,
+//     preview,
+//     previewImage,
+//   });
+// }
+
+// const offsetX = 20; // Adjust this value to move the image slightly away from the cursor
+// const offsetY = 20; // Adjust this value to move the image slightly away from the cursor
+
+// const showPreview = () => {
+//   gsap.to(preview, { duration: 0.3, scale: 1 });
+// };
+
+// const hidePreview = () => {
+//   gsap.to(preview, { duration: 0.3, scale: 0 });
+// };
+
+// const movePreview = (e) => {
+//   gsap.to(preview, { duration: 0.1, left: `${e.clientX + offsetX}px`, top: `${e.clientY + offsetY}px` });
+// };
+
+// const changePreviewImage = (bgUrl) => {
+//   gsap.to(previewImage, { duration: 0.3, opacity: 0, onComplete: () => {
+//     previewImage.style.backgroundImage = `url(${bgUrl})`;
+//     gsap.to(previewImage, { duration: 0.3, opacity: 1 });
+//   }});
+// };
+
+// projects.forEach(project => {
+//   project.addEventListener('mouseenter', (e) => {
+//     showPreview();
+//     movePreview(e);
+//     changePreviewImage(project.getAttribute('data-bg'));
+//   });
+
+//   project.addEventListener('mousemove', movePreview);
+
+//   project.addEventListener('mouseleave', hidePreview);
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const projects = document.querySelectorAll(".Project");
+const preview = document.querySelector(".Preview");
+const previewImage = document.querySelector(".Preview-img");
+
+if (!projects.length || !preview || !previewImage) {
+  console.error("One or more elements were not found:", {
+    projectsLength: projects.length,
+    preview,
+    previewImage,
+  });
+}
+
+let isInside = false;
+
+const showPreview = () => {
+  gsap.to(preview, { duration: 0.3, scale: 1 });
+};
+
+const hidePreview = () => {
+  gsap.to(preview, { duration: 0.3, scale: 0 });
+};
+
+const movePreview = (e) => {
+  const offsetX = preview.offsetWidth / 2;
+  const offsetY = preview.offsetHeight / 2;
+  gsap.to(preview, { duration: 0.1, left: `${e.clientX - offsetX}px`, top: `${e.clientY - offsetY}px` });
+};
+
+const changePreviewImage = (bgUrl) => {
+  gsap.to(previewImage, { duration: 0.3, opacity: 0, onComplete: () => {
+    previewImage.style.backgroundImage = `url(${bgUrl})`;
+    gsap.to(previewImage, { duration: 0.3, opacity: 1 });
+  }});
+};
+
+projects.forEach(project => {
+  project.addEventListener('mouseenter', (e) => {
+    showPreview();
+    movePreview(e);
+    changePreviewImage(project.getAttribute('data-bg'));
+  });
+
+  project.addEventListener('mousemove', movePreview);
+
+  project.addEventListener('mouseleave', hidePreview);
+});
+
+// Adjust preview position on window resize
+window.addEventListener('resize', () => {
+  if (isInside) {
+    // Recalculate position on resize if preview is shown
+    const currentProject = document.querySelector('.Project:hover');
+    if (currentProject) {
+      movePreview({
+        clientX: currentProject.getBoundingClientRect().left + (currentProject.offsetWidth / 2),
+        clientY: currentProject.getBoundingClientRect().top + (currentProject.offsetHeight / 2)
+      });
+    }
+  }
+});

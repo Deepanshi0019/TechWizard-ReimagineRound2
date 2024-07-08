@@ -1,138 +1,40 @@
-*{
+/* General Styles */
+* {
     scroll-behavior: smooth;
 }
-.nanum-myeongjo-regular {
-    font-family: "Nanum Myeongjo", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-.bodoni-moda-sc-{
-    font-family: "Bodoni Moda SC", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
 
-
-
-  body::-webkit-scrollbar{
-      display: none;
-  }
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%; 
-}
-body{
     overflow-x: hidden;
 }
 
-/* Homepage css */
-
-.mouse{
-    animation: updaown 4s infinite;
-}
-.Left-Right-nav-text{
-    display: none;
-}
-.arrow{
-    animation: leftright 4s infinite;
-}
-#The-ragister-div2{
+body::-webkit-scrollbar {
     display: none;
 }
 
-@keyframes leftright {
-    0%{
-        transform: translateX(-20%);
-    }
-    50%{
-        transform: translateX(0%);
-    }
-    100%{
-        transform: translateX(-20%);
-        
-    }
-}
-@keyframes updaown {
-    0%{
-        transform: translateY(-20%);
-    }
-    50%{
-        transform: translateY(0%);
-    }
-    100%{
-        transform: translateY(-20%);
-        
-    }
-}
-
-
-
-
-/* Explore more page css */
-.IMG-CONT:hover > img{ 
-    animation: Pulse 800ms ease-in-out ;
-}
-.IMG-CONT > img{
-     object-fit: cover;
-     
-
-}
-
-
-
-.hover-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none; 
+*::selection {
+    background-color: #B5944A;
     color: white;
-    overflow: hidden;
-    text-align: center;
 }
 
-.image-text {
-    font-size: 16vmin;
-    color: transparent; /* Make the text transparent */
-    background: url('https://plus.unsplash.com/premium_photo-1697730270201-bdfc5b81a675?q=80&w=2736&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
-    background-size: cover;
-    -webkit-background-clip: text;
-    background-clip: text;
+/* Font Styles */
+.nanum-myeongjo-regular {
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-
-
-
-@keyframes Pulse {
-    from,to {
-        scale:1;
-    }
-    
-    50%{
-        scale:1.08;
-    }
-
-    
+.bodoni-moda-sc- {
+    font-family: "Bodoni Moda SC", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
-
-
-@media (min-width:768px) {
-    
-    .Left-Right-nav-text{
-        display: block;
-        display: flex;
-    }
-    #The-ragister-div2{
-        display: block;
-        display: flex;
-
-    }
-
-}
-
+/* Home Page Styles */
 #waveCanvas {
     position: absolute;
     top: 0;
@@ -140,4 +42,225 @@ body{
     width: 100%;
     height: 100%;
     z-index: -1; /* Behind all other content */
+}
+
+#Home-page-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+#Text-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: auto;
+    margin-bottom: 8vmin;
+    color: white;
+}
+
+#The-ragister-div {
+    height: 40%;
+    width: auto;
+    display: none; /* Initially hidden */
+}
+
+#The-ragister-div2 {
+    display: none; /* Initially hidden */
+    height: 40%;
+    width: auto;
+}
+
+.mouse {
+    animation: updaown 4s infinite;
+}
+
+.arrow {
+    animation: leftright 4s infinite;
+}
+
+/* Navigation Styles */
+.Left-Right-nav-text {
+    display: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    gap: 3vmin;
+    padding: 0 4vmin;
+    color: white;
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav .Left-Right-nav-text {
+    padding-left: 2vmin;
+    gap: 9vmin;
+    font-size: 3vmin;
+    display: flex;
+}
+
+nav img {
+    height: 10vmin;
+    width: 10vmin;
+    margin-top: 4vmin;
+}
+
+nav .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2vmin;
+    display: none; /* Hidden on larger screens */
+}
+
+nav #Menu-button {
+    font-size: 6vmin;
+}
+
+/* Opened Navigation (Responsive) */
+#opened-nav {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    flex-direction: column;
+    gap: 3vmin;
+    z-index: 1;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+}
+
+#opened-nav.visible {
+    display: flex;
+    max-height: 100vh;
+}
+
+/* Animations */
+@keyframes leftright {
+    0% {
+        transform: translateX(-20%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-20%);
+    }
+}
+
+@keyframes updaown {
+    0% {
+        transform: translateY(-20%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-20%);
+    }
+}
+
+/* Explore More Page Styles */
+.Second-page {
+    position: relative;
+    padding: 6vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+    color: black;
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.Preview {
+    position: absolute;
+    width: 40vmin;
+    height: 40vmin;
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+.Preview-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.Project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-bottom: 2px solid black;
+    padding-bottom: 2vmin;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 7vmin;
+}
+
+.heading, .para {
+    width: 100%;
+    font-size: 3vmin;
+}
+
+.para {
+    display: flex;
+    align-items: flex-end;
+}
+
+.IMG-CONT:hover > img {
+    animation: Pulse 800ms ease-in-out;
+}
+
+.IMG-CONT > img {
+    object-fit: cover;
+}
+
+@keyframes Pulse {
+    from, to {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .Left-Right-nav-text {
+        display: flex;
+    }
+    #The-ragister-div2 {
+        display: flex;
+    }
 }
