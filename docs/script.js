@@ -1,8 +1,5 @@
 // Homepage script starts from here ///
-//Homepage script ends here //
-
 //Explore more starts from here//
-// Ensure PIXI is loaded
 if (typeof PIXI !== "undefined") {
   console.log("PIXI.js is loaded correctly.");
 
@@ -90,206 +87,6 @@ Menu_Button.addEventListener("click", function () {
   }
 });
 
-
-
-
-
-
-
-
-// const projects = document.querySelectorAll(".Project");
-// const preview = document.querySelector(".Preview");
-// const previewImage = document.querySelector(".Preview-img");
-
-// if (!projects.length || !preview || !previewImage) {
-//   console.error("One or more elements were not found:", {
-//     projectsLength: projects.length,
-//     preview,
-//     previewImage,
-//   });
-// }
-
-// const offsetX = 20; // Adjust this value to move the image slightly away from the cursor
-// const offsetY = 20; // Adjust this value to move the image slightly away from the cursor
-
-// const showPreview = () => {
-//   gsap.to(preview, { duration: 0.3, scale: 1 });
-// };
-
-// const hidePreview = () => {
-//   gsap.to(preview, { duration: 0.3, scale: 0 });
-// };
-
-// const movePreview = (e) => {
-//   gsap.to(preview, { duration: 0.1, left: `${e.pageX + offsetX}px`, top: `${e.pageY + offsetY}px` });
-// };
-
-// const changePreviewImage = (bgUrl) => {
-//   gsap.to(previewImage, { duration: 0.3, opacity: 0, onComplete: () => {
-//     previewImage.style.backgroundImage = `url(${bgUrl})`;
-//     gsap.to(previewImage, { duration: 0.3, opacity: 1 });
-//   }});
-// };
-
-// projects.forEach(project => {
-//   project.addEventListener('mouseenter', (e) => {
-//     showPreview();
-//     movePreview(e);
-//     changePreviewImage(project.getAttribute('data-bg'));
-//   });
-
-//   project.addEventListener('mousemove', movePreview);
-
-//   project.addEventListener('mouseleave', hidePreview);
-// });
-
-
-
-
-// const projects = document.querySelectorAll(".Project");
-// const preview = document.querySelector(".Preview");
-// const previewImage = document.querySelector(".Preview-img");
-
-// if (!projects.length || !preview || !previewImage) {
-//   console.error("One or more elements were not found:", {
-//     projectsLength: projects.length,
-//     preview,
-//     previewImage,
-//   });
-// }
-
-// let isInside = false;
-
-// const showPreview = () => {
-//   gsap.to(preview, { duration: 1, scale: 1 });
-// };
-
-// const hidePreview = () => {
-//   gsap.to(preview, { duration: 1, scale: 0 });
-// };
-
-// const movePreview = (e) => {
-//   const offsetX = preview.offsetWidth / 2;
-//   const offsetY = preview.offsetHeight / 2;
-//   gsap.to(preview, { duration: 0.3, left: `${e.clientX - offsetX}px`, top: `${e.clientY - offsetY}px` });
-// };
-
-// const changePreviewImage = (bgUrl) => {
-//   gsap.to(previewImage, { duration: 0.3, opacity: 0, onComplete: () => {
-//     previewImage.style.backgroundImage = `url(${bgUrl})`;
-//     gsap.to(previewImage, { duration: 0.3, opacity: 1 });
-//   }});
-// };
-
-// projects.forEach(project => {
-//   project.addEventListener('mouseenter', (e) => {
-//     showPreview();
-//     movePreview(e);
-//     changePreviewImage(project.getAttribute('data-bg'));
-//   });
-
-//   project.addEventListener('mouseenter', movePreview);
-
-//   project.addEventListener('mouseleave', hidePreview);
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const projects = document.querySelectorAll(".Project");
-// const preview = document.querySelector(".Preview");
-// const previewImage = document.querySelector(".Preview-img");
-
-// if (!projects.length || !preview || !previewImage) {
-//   console.error("One or more elements were not found:", {
-//     projectsLength: projects.length,
-//     preview,
-//     previewImage,
-//   });
-// }
-
-// const offsetX = 20; // Adjust this value to move the image slightly away from the cursor
-// const offsetY = 20; // Adjust this value to move the image slightly away from the cursor
-
-// const showPreview = () => {
-//   gsap.to(preview, { duration: 0.3, scale: 1 });
-// };
-
-// const hidePreview = () => {
-//   gsap.to(preview, { duration: 0.3, scale: 0 });
-// };
-
-// const movePreview = (e) => {
-//   gsap.to(preview, { duration: 0.1, left: `${e.clientX + offsetX}px`, top: `${e.clientY + offsetY}px` });
-// };
-
-// const changePreviewImage = (bgUrl) => {
-//   gsap.to(previewImage, { duration: 0.3, opacity: 0, onComplete: () => {
-//     previewImage.style.backgroundImage = `url(${bgUrl})`;
-//     gsap.to(previewImage, { duration: 0.3, opacity: 1 });
-//   }});
-// };
-
-// projects.forEach(project => {
-//   project.addEventListener('mouseenter', (e) => {
-//     showPreview();
-//     movePreview(e);
-//     changePreviewImage(project.getAttribute('data-bg'));
-//   });
-
-//   project.addEventListener('mousemove', movePreview);
-
-//   project.addEventListener('mouseleave', hidePreview);
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const projects = document.querySelectorAll(".Project");
 const preview = document.querySelector(".Preview");
 const previewImage = document.querySelector(".Preview-img");
@@ -349,4 +146,31 @@ window.addEventListener('resize', () => {
       });
     }
   }
+});
+// document.addEventListener("DOMContentLoaded", function() {
+//   // GSAP animation for scaling up the home page
+//   gsap.to("#Home-Section-animation", {
+//       duration: 2,
+//       scale: 1,
+//       height:"100vh",
+//       opacity: 1,
+//       transformOrigin:"bottom",
+//       ease: "power2.out"
+//   });
+// });
+
+gsap.set("#Home-Section-animation", { 
+  scale: 0.1, 
+  opacity: 1,
+  height: "70vh",
+  transformOrigin: "bottom",
+});
+
+gsap.to("#Home-Section-animation", {
+  duration: 2,
+  scale: 1,
+  height: "100vh",
+  opacity: 1,
+  transformOrigin: "bottom",
+  ease: "power2.out"
 });

@@ -32,14 +32,14 @@
         overflow-x: hidden;
     }
     
-    /* Homepage css */
+    
     #waveCanvas {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: -1; /* Behind all other content */
+        z-index: -1; 
     }
 
 .mouse{
@@ -60,13 +60,20 @@
     gap: 3vmin;
     flex-direction: column;
     display: none;
-    transition: max-height 0.3s ease-out; /* Animation transition for max-height */
-    max-height: 0; /* Initially hidden */
+    transition: max-height 0.3s ease-out; 
+    max-height: 0; 
 
 }
 #opened-nav.visible {
     display: flex;
-    max-height: 100vh; /* Show full height */
+    max-height: 100vh; 
+}
+#Home-Section-animation{
+    transform: scale(0.1);
+    opacity: 1;
+    will-change: transform, opacity;
+    height: 50vh;
+    transition: transform 1s ease, opacity 1s ease,height ease;
 }
 
 
@@ -131,12 +138,10 @@
 }
 .Second-page {
     position: relative;
-    /* overflow: hidden; */
   }
   
   .Preview {
     position: absolute;
-    /* pointer-events: none; */
     transform-origin: center;
     transition: transform 0.3s ease-out;
   }
