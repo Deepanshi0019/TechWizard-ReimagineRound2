@@ -15,12 +15,12 @@
 
 </head>
 
-<body>
+<body class="overflow-x-hidden">
   <div class="h-[100vh] w-[100vw]">
     <div id="Home-Section-animation" class="h-[100vh] w-[100vw] overflow-hidden">
 
       <canvas id="waveCanvas"></canvas>
-    
+
       <!-- Keep the navigation simplified for now -->
       <nav
         class="h-[60px] w-full z-[2] absolute gap-3 top-0 flex justify-between md:justify-evenly items-center px-[4vmin] nanum-myeongjo-regular text-white">
@@ -34,14 +34,15 @@
           <h1 class="text-[8vmin] font-bold">Taj Hotels</h1>
           <h4>Icon of luxery</h4>
         </div>
-    
+
         <div class="Left-Right-nav-text pl-[2vmin] h-auto w-auto justify-start items-center gap-[9vmin] text-[3vmin]">
           <h1>Daining</h1>
           <h1>Hotels</h1>
         </div>
         <i id="Menu-button" class="ri-menu-3-line text-[6vmin] md:hidden"></i>
       </nav>
-      <div id="opened-nav" class="z-[1] h-screen w-screen absolute bg-gray-400 md:hidden nanum-myeongjo-regular hidden-div">
+      <div id="opened-nav"
+        class="z-[1] h-screen w-screen absolute bg-gray-400 md:hidden nanum-myeongjo-regular hidden-div">
         <h1 class="text-[8vmin] sm:text-[5vmin]">Home</h1>
         <h1 class="text-[8vmin] sm:text-[5vmin]">Destination</h1>
         <h1 class="text-[8vmin] sm:text-[5vmin]">Dining</h1>
@@ -81,69 +82,20 @@
       </div>
     </div>
   </div>
- 
-  <div class="Card-div h-[100vh] w-[100vw] flex flex-col bg-white">
 
-    <div class="Heading-div h-[20%] w-[100vw] bodoni-moda-sc- flex justify-center items-center">
-      <h1 class="text-[8vmin] font-semibold">Explore More</h1>
-    </div>
-    <div class="Second-page h-[80%] nanum-myeongjo-regular w-full p-[6vmin] pb-[6vmin] flex justify-center items-center text-black relative">
-      <div class="Preview absolute h-[40vmin] w-[40vmin] origin-center transform  pointer-events-none">
-        <div class="Preview-img h-full w-full z-[2] bg-cover bg-no-repeat bg-center"></div>
-      </div>
-      <div class="container w-full h-full">
-        <div class="projects" id="headerr">
-          <div class="Project" id="p1" data-bg="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?cs=srgb&dl=pexels-pixabay-258154.jpg&fm=jpg">
-            <div class="heading">
-              <p>City Hotels</p>
-            </div>
-            <div class="para">
-              <p>HAVENS OF LUXURY AND COMFORT, Renowned as city landmarks</p>
-            </div>
-          </div>
-          <div class="Project" id="p2" data-bg="https://img.freepik.com/free-photo/house-landscape-pool-relaxation-garden_1203-4900.jpg">
-            <div class="heading">
-              <p>Idyllic resort</p>
-            </div>
-            <div class="para">
-              <p>Renowned as city landmarks, Taj Hotels welcome guests with an extraordinary level of service.</p>
-            </div>
-          </div>
-          <div class="Project" id="p3" data-bg="https://etimg.etb2bimg.com/photo/90047714.cms">
-            <div class="heading">
-              <p>Hotels opening</p>
-            </div>
-            <div class="para">
-              <p>Join us at our newest hotels as we set foot in new destinations and create unmissable landmarks.</p>
-            </div>
-          </div>
-          <div class="Project" id="p4" data-bg="/Images-home/image4.jpg">
-            <div class="heading">
-              <p>Living places</p>
-            </div>
-            <div class="para">
-              <p>Rare and historic, Taj palaces transport you to an era of grandeur, steeped in an authentically royal narrative.</p>
-            </div>
-          </div>
-          <div class="Project" id="p5" data-bg="https://i.ytimg.com/vi/9o57q8KMbPc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDILWKAA0eX2buxBLTlh5gwPEZmCA">
-            <div class="heading">
-              <p>Magical opening</p>
-            </div>
-            <div class="para">
-              <p>Taj Safaris serve as the epitome of wildlife adventures across the globe. Observe wild animals in their natural habitats.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
+  <div id="Container-Explore-More" class="h-screen w-[400vw] flex">
+
+    <!--(puple) Ye div apne jagahs per nahi stick ho rha hai scroll ke sath sath ye bhi idhar udhar ja rha hai -->
+    <div class="purple-div h-[40vmin] w-[40vmin] bg-purple-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[11]"></div>
   
-
-
-
-
+    <div class="Sec-Photo h-[100vh] w-[100vw] bg-yellow-400 flex justify-center items-center z-[10]">
+      <h1 class="text-[15vmin] z-[12]">City Hotels</h1>
+    </div>
+    <div class="Sec-Photo h-[100vh] w-[100vw] bg-red-400"></div>
+    <div class="Sec-Photo h-[100vh] w-[100vw] bg-green-400"></div>
+    <div class="Sec-Photo h-[100vh] w-[100vw] bg-blue-400"></div>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"

@@ -73,7 +73,7 @@
     opacity: 1;
     will-change: transform, opacity;
     height: 50vh;
-    transition: transform 1s ease, opacity 1s ease,height ease;
+    transition: transform 0s ease, opacity 0s ease,height ease;
 }
 
 
