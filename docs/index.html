@@ -84,9 +84,8 @@
   </div>
 
   <div id="Container-Explore-More" class="h-screen w-[400vw] flex">
-
-    <!--(puple) Ye div apne jagahs per nahi stick ho rha hai scroll ke sath sath ye bhi idhar udhar ja rha hai -->
-    <div class="purple-div h-[40vmin] w-[40vmin] bg-purple-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[11]"></div>
+    <!--DONE ✅  div ko absolute nhi fixed dena tha -->
+    <div class="purple-div h-[40vmin] w-[40vmin] bg-purple-500 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[11]"></div>
   
     <div class="Sec-Photo h-[100vh] w-[100vw] bg-yellow-400 flex justify-center items-center z-[10]">
       <h1 class="text-[15vmin] z-[12]">City Hotels</h1>
@@ -94,16 +93,24 @@
     <div class="Sec-Photo h-[100vh] w-[100vw] bg-red-400"></div>
     <div class="Sec-Photo h-[100vh] w-[100vw] bg-green-400"></div>
     <div class="Sec-Photo h-[100vh] w-[100vw] bg-blue-400"></div>
-  </div>
+</div>
+
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- Load GSAP and ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+      integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
+      integrity="sha512-A64Nik4Ql7/W/PJk2RNOmVyC/Chobn5TY08CiKEX50Sdw+33WTOpPJ/63bfWPl0hxiRv1trPs5prKO8CpA7VNQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <!-- Load Locomotive Scroll -->
+  <script src="https://unpkg.com/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
   <script src="script.js"></script>
 </body>
 
