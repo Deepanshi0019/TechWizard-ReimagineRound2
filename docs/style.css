@@ -15,6 +15,17 @@ body[theme="white"]{
 body[theme="white"] .section{
     color: var(--black);
 }
+/* dual wins */
+.reveal_img-item{
+    position: relative;
+    width: 75vmin;
+    height: 60vmin;
+    padding-left: 5vmin;
+    overflow: hidden;
+}
+.reveal_img-item:nth-child(even){
+    transform: translateY(150px);
+}
 
 .slide .img-wrapper {
     transition: transform 0.3s ease-in-out;
@@ -36,6 +47,12 @@ body[theme="white"] .section{
 }
 .slide .text{
     z-index: 2;
+}
+.slides h1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 20;
 }
 .bw-to-color {
     filter: grayscale(100%);
