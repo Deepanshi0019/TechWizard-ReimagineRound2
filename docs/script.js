@@ -166,6 +166,8 @@ gsap.to("#Home-Section-animation", {
   ease: "power2.out"
 });
 
+gsap.registerPlugin(ScrollTrigger);
+
 
 
 gsap.utils.toArray('#Container-Explore-More > div').forEach((innerDiv, i) => {
