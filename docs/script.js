@@ -190,22 +190,3 @@ gsap.utils.toArray('#Container-Explore-More > div').forEach((innerDiv, i) => {
 
 
 
-
-// gsap.utils.toArray('#Container-Explore-More > div').forEach((innerDiv, i) => {
-//   gsap.fromTo(innerDiv, 
-//       {  opacity: 0,width: "30vw", height: "20vh" }, 
-//       { 
-          
-//           opacity: 1, 
-//           width: "100vw", 
-//           height: "40vh", 
-//           scrollTrigger: {
-//               trigger: innerDiv,
-//               start: "top center+=100",
-//               end: "top center",
-//               scrub: 2,
-//               markers: true,
-//           }
-//       }
-//   );
-// });
