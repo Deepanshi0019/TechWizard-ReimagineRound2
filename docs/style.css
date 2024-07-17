@@ -2,6 +2,10 @@
     scroll-behavior: smooth;
     
 }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+}
 .nanum-myeongjo-regular {
     font-family: "Nanum Myeongjo", serif;
     font-weight: 400;
@@ -76,7 +80,16 @@
     transition: transform 0s ease, opacity 0s ease,height ease;
 }
 
-
+.overflow-hidden {
+    overflow: hidden;
+}
+.rubber-band {
+    display: inline-block;
+}
+.hover-container:hover .rubber-band {
+    transform: translateY(0);
+    transition: transform 0.6s ease-in-out;
+}
 
 /* Adjust text size for responsiveness */
 

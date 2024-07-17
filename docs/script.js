@@ -147,17 +147,8 @@ window.addEventListener('resize', () => {
     }
   }
 });
-// document.addEventListener("DOMContentLoaded", function() {
-//   // GSAP animation for scaling up the home page
-//   gsap.to("#Home-Section-animation", {
-//       duration: 2,
-//       scale: 1,
-//       height:"100vh",
-//       opacity: 1,
-//       transformOrigin:"bottom",
-//       ease: "power2.out"
-//   });
-// });
+
+
 
 gsap.set("#Home-Section-animation", { 
   scale: 0.1, 
@@ -175,14 +166,44 @@ gsap.to("#Home-Section-animation", {
   ease: "power2.out"
 });
 
-gsap.to("#Container-Explore-More", {
-    x: "-300vw", // Move the container by its full width minus one viewport width
-    scrollTrigger: {
-      trigger: ".Sec-Photo",
-      start: "top top", // Start the animation when the container reaches the top of the viewport
-      end: "+=4000", // The end point of the scroll (4000 pixels)
-      scrub: 1, // Smooth scrubbing
-      pin: true, // Pin the container while scrolling
-      markers: true // Enable markers for debugging
-    }
-  });
+
+
+gsap.utils.toArray('#Container-Explore-More > div').forEach((innerDiv, i) => {
+  gsap.fromTo(innerDiv, 
+      { opacity: 0, width: "30vw", height: "20vh" }, 
+      {   
+        opacity: 1, 
+          width: "100vw", 
+          height: "40vh", 
+          scrollTrigger: {
+              trigger: innerDiv,
+              start: "top center+=100",
+              end: "top top",
+              scrub: 3,
+              markers: true,
+          }
+      }
+  );
+});
+
+
+
+
+// gsap.utils.toArray('#Container-Explore-More > div').forEach((innerDiv, i) => {
+//   gsap.fromTo(innerDiv, 
+//       {  opacity: 0,width: "30vw", height: "20vh" }, 
+//       { 
+          
+//           opacity: 1, 
+//           width: "100vw", 
+//           height: "40vh", 
+//           scrollTrigger: {
+//               trigger: innerDiv,
+//               start: "top center+=100",
+//               end: "top center",
+//               scrub: 2,
+//               markers: true,
+//           }
+//       }
+//   );
+// });
