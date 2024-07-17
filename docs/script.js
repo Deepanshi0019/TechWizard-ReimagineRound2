@@ -15,6 +15,6 @@ gsap.to(".slides",{
         end: "bottom bottom",
         scrub:1
     },
-    xPercent:-400,
+    xPercent:-310,
     ease:Power4
 })

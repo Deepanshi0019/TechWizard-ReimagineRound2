@@ -48,12 +48,6 @@ body[theme="white"] .section{
 .slide .text{
     z-index: 2;
 }
-.slides h1 {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    z-index: 20;
-}
 .bw-to-color {
     filter: grayscale(100%);
     transition: filter 0.5s ease;
