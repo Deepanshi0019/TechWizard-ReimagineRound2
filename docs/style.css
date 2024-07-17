@@ -79,18 +79,35 @@ body {
     height: 50vh;
     transition: transform 0s ease, opacity 0s ease,height ease;
 }
-
-.overflow-hidden {
-    overflow: hidden;
+#Container-Explore-More {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
 }
-.rubber-band {
-    display: inline-block;
+.inner-div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 50vw;
+    padding: 1.25rem;
+    margin: 1rem;
+    border-bottom: 2px solid #AD8B3A;
 }
-.hover-container:hover .rubber-band {
-    transform: translateY(0);
-    transition: transform 0.6s ease-in-out;
+.image-container {
+    position: relative;
+    width: auto;
+    height: 100%;
 }
-
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 /* Adjust text size for responsiveness */
 
 

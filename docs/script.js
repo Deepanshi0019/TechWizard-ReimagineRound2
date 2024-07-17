@@ -150,6 +150,8 @@ window.addEventListener('resize', () => {
 
 
 
+
+
 gsap.set("#Home-Section-animation", { 
   scale: 0.1, 
   opacity: 1,
@@ -182,7 +184,7 @@ gsap.utils.toArray('#Container-Explore-More > div').forEach((innerDiv, i) => {
               start: "top center+=100",
               end: "top top",
               scrub: 3,
-              markers: true,
+              markers: false,
           }
       }
   );
