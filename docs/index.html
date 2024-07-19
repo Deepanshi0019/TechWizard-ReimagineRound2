@@ -4,90 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taj Hotel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!--                                        Exclusivly section👌                              -->
-    <div class="container">
-        <div class="slide">
-             <!--item 1-->
-             <div class="item bg-[url(https://images.pexels.com/photos/461562/pexels-photo-461562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)]">
-                <div class="content">
-                    <div class="name">Monsoon Magic in Goa</div>
-                    <div class="des">Experience the enchanting rains on Goa's pristine beaches and enjoy unforgettable stays with our exclusive monsoon special offer.</div>
-                    <button>More</button>
-                </div>
-             </div>
-            
-             <!--item 2-->
-             <div class="item bg-[url(https://images.pexels.com/photos/7919685/pexels-photo-7919685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)]">
-                <div class="content">
-                    <div class="name">Soulful Retreats</div>
-                    <div class="des"> Reconnect with your spirit, awaken your inner wisdom, and discover profound peace as you explore India's spiritual destinations.</div>
-                    <button>More</button>
-                </div>
-             </div>
-            
-             <!--item 3-->
-             <div class="item bg-[url(https://images.pexels.com/photos/7919685/pexels-photo-7919685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)]">
-                <div class="content">
-                    <div class="name">Taj Vacations</div>
-                    <div class="des">Step beyond the ordinary and create lasting memories with a meticulously curated Taj holiday experience.</div>
-                    <button>More</button>
-                </div>
-             </div>
-            
-            <!--item 4-->
-             <div class="item bg-[url(https://images.pexels.com/photos/16231298/pexels-photo-16231298/free-photo-of-taj-mahal-palace-in-mumbai.jpeg)]">
-                <div class="content">
-                    <div class="name">Foodie</div>
-                    <div class="des">Explore a realm of perks with member-exclusive savings, unique vouchers, and exclusive benefits designed for indulgence.</div>
-                    <button>More</button>
-                </div>
-             </div>
+<div class="page5 h-screen w-full py-16 relative">
+    <div class="page5-top">
+        <h1 class="text-[10vw] font-thin border-b border-[#282626] w-[96%] ml-[2%]">Specifically for You</h1>
+        <div class="swiperdiv h-[60vh] w-full relative mt-[-4%]">
+            <div class="swiper mySwiper w-full h-full mx-auto">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex flex-col md:flex-row justify-around items-center md:items-end text-center text-[18px]">
+                        <div class="img h-[60vh] w-[40vh] bg-red-500 relative">
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/flagged/photo-1572534779127-b64758946728?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            <div class="overlay text-white flex gap-[2vmin] flex-col items-center justify-center">
+                                <h1 class="text-2xl">Eternal Weddings</h1>
+                                <button class="px-4 border-2 border-white rounded-full hover:bg-white hover:text-black">More</button>
+                            </div>
+                        </div>
+                        <div class="img h-[25vh] w-[40vh] bg-red-200 relative">
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1612779774202-68e4305b849b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            <div class="overlay text-white flex gap-[1vmin] flex-col items-center justify-center">
+                                <h1 class="text-2xl">Eternal Weddings</h1>
+                                <button class="px-4  border-2 border-white rounded-full hover:bg-white hover:text-black">More</button>
+                            </div>
+                        </div>
+                        <div class="img h-[25vh] w-[40vh] bg-red-600 relative">
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            <div class="overlay text-white flex gap-[1vmin] flex-col items-center justify-center">
+                                <h1 class="text-2xl">Eternal Weddings</h1>
+                                <button class="px-4  border-2 border-white rounded-full hover:bg-white hover:text-black">More</button>
+                            </div>
+                        </div>
+                        <div class="img h-[25vh] w-[40vh] bg-red-300 relative">
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1569034797434-b168fbcf7fcc?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            <div class="overlay text-white flex gap-[1vmin] flex-col items-center justify-center">
+                                <h1 class="text-2xl">Eternal Weddings</h1>
+                                <button class="px-4  border-2 border-white rounded-full hover:bg-white hover:text-black">More</button>
+                            </div>
+                        </div>
+                        <div class="img h-[60vh] w-[40vh] bg-red-800 relative">
+                            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1695124566076-9e510f268acf?q=80&w=1909&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                            <div class="overlay text-white flex gap-[2vmin] flex-col items-center justify-center">
+                                <h1 class="text-2xl">Eternal Weddings</h1>
+                                <button class="px-4  border-2 border-white rounded-full hover:bg-white hover:text-black">More</button>
+                            </div>
+                        </div>
 
-             <!--item 5-->
-             <div class="item bg-[url(https://images.pexels.com/photos/16231298/pexels-photo-16231298/free-photo-of-taj-mahal-palace-in-mumbai.jpeg)]">
-                 <div class="content">
-                    <div class="name">Evergreen Weddings</div>
-                    <div class="des">Transform your special day into an unforgettable celebration at our iconic destinations, embraced by our legendary hospitality.</div>
-                    <button>More</button>
-                 </div>
-             </div>
-
-             <div class="item bg-[url(https://images.pexels.com/photos/7919685/pexels-photo-7919685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)]">
-                <div class="content">
-                    <div class="name">Voyage</div>
-                    <div class="des">Woyage offers a harmonious blend of packages designed exclusively for her, from thrilling adventures to tranquil retreats.</div>
-                    <button>More</button>
+                    </div>
+                    <div class="swiper-slide flex flex-col md:flex-row justify-around items-end text-center text-[18px]">
+                        <img class="big block w-[18%] h-full object-cover" src="https://images.unsplash.com/flagged/photo-1572534779127-b64758946728?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img class="small block w-[18%] object-cover" src="https://images.unsplash.com/photo-1612779774202-68e4305b849b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img class="small block w-[18%] object-cover" src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img class="small block w-[18%] h-[25vh] object-cover" src="https://images.unsplash.com/photo-1569034797434-b168fbcf7fcc?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img class="big block w-[18%] h-full object-cover" src="https://images.unsplash.com/photo-1695124566076-9e510f268acf?q=80&w=1909&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    </div>
                 </div>
-             </div>
-        </div>
-
-        <div class="button">
-            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
-            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
         </div>
     </div>
+</div>
+
 <!--                                        Exclusivly section Ends Here👌                              -->
 
 
 
 <!--                                       WINS SECTION 🏆                                              -->
 
-<div class="win-container">
-     <div class="h-text"></div>
-     <div class="img sticky top-0 left-0"></div>
-     <div class="p-text"></div>
-</div>
+
 
 
 <!--                                       WINS SECTION 🏆                                              -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+    integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
+    integrity="sha512-A64Nik4Ql7/W/PJk2RNOmVyC/Chobn5TY08CiKEX50Sdw+33WTOpPJ/63bfWPl0hxiRv1trPs5prKO8CpA7VNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+<!-- Load Locomotive Scroll -->
+<script src="https://unpkg.com/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="/TechWizard-ReimagineRound2/docs/script.js"></script>
 </body>
 </html>
