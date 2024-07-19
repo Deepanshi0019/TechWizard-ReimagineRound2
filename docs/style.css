@@ -1,230 +1,187 @@
-*{
+* {
     scroll-behavior: smooth;
-    
+
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 body {
     font-family: 'Inter', sans-serif;
 }
+
 .nanum-myeongjo-regular {
     font-family: "Nanum Myeongjo", serif;
     font-weight: 400;
     font-style: normal;
 }
-.bodoni-moda-sc-{
+
+.bodoni-moda-sc- {
     font-family: "Bodoni Moda SC", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
-*::selection{
+
+*::selection {
     background-color: #B5944A;
     color: white;
 }
 
 
-  body::-webkit-scrollbar{
-      display: none;
-    }
-    body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%; 
-    }
-    body{
-        overflow-x: hidden;
-    }
-    
-    
-    #waveCanvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1; 
-    }
+body::-webkit-scrollbar {
+    display: none;
+}
 
-.mouse{
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+#waveCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.mouse {
     animation: updaown 4s infinite;
 }
-.Left-Right-nav-text{
+
+.Left-Right-nav-text {
     display: none;
 }
-.arrow{
+
+.arrow {
     animation: leftright 4s infinite;
 }
-#The-ragister-div2{
+
+#The-ragister-div2 {
     display: none;
 }
+
 #opened-nav {
     justify-content: center;
     align-items: center;
     gap: 3vmin;
     flex-direction: column;
     display: none;
-    transition: max-height 0.3s ease-out; 
-    max-height: 0; 
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
 
 }
+
 #opened-nav.visible {
     display: flex;
-    max-height: 100vh; 
+    height: 100vh;
 }
-#Home-Section-animation{
+
+#Home-Section-animation {
     transform: scale(0.1);
     opacity: 1;
     will-change: transform, opacity;
     height: 50vh;
-    transition: transform 0s ease, opacity 0s ease,height ease;
+    transition: transform 0s ease, opacity 0s ease, height ease;
 }
-#Container-Explore-More {
-    display: flex;
-    flex-direction: column;
-    gap: 2.25rem;
-}
-.inner-div {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    width: 50vw;
-    padding: 1.25rem;
-    margin: 1rem;
-    border-bottom: 2px solid #AD8B3A;
-}
-.image-container {
-    position: relative;
-    width: auto;
-    height: 100%;
-}
-canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+
+
+
 /* Adjust text size for responsiveness */
 
 
 @keyframes leftright {
-    0%{
+    0% {
         transform: translateX(-20%);
     }
-    50%{
+
+    50% {
         transform: translateX(0%);
     }
-    100%{
+
+    100% {
         transform: translateX(-20%);
-        
+
     }
 }
+
 @keyframes updaown {
-    0%{
+    0% {
         transform: translateY(-20%);
     }
-    50%{
+
+    50% {
         transform: translateY(0%);
     }
-    100%{
+
+    100% {
         transform: translateY(-20%);
-        
+
     }
 }
-
-
-
-
-/* Explore more page css */
-.IMG-CONT:hover > img{ 
-    animation: Pulse 800ms ease-in-out ;
-}
-.IMG-CONT > img{
-     object-fit: cover;
-     
-
-}
-
-
-
-
-
 
 
 @keyframes Pulse {
-    from,to {
-        scale:1;
-    }
-    
-    50%{
-        scale:1.08;
+
+    from,
+    to {
+        scale: 1;
     }
 
-    
-}
-.Second-page {
-    position: relative;
-  }
-  
-  .Preview {
-    position: absolute;
-    transform-origin: center;
-    transition: transform 0.3s ease-out;
-  }
+    50% {
+        scale: 1.08;
+    }
 
-  
-  .Preview-img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
 
-.Project{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    border-bottom: 2px black solid;
-    padding-bottom: 2vmin;
 }
-.projects{
-    display: flex;
-    flex-direction: column;
-    gap: 7vmin;
-}
-.heading{
 
-  height: 100%;
-  width: 100%;
-}
-.para{
-    width: 100%;
-    display: flex;
-    align-items: end;
-}
-.heading,
-.para{
-    font-size: 3vmin;
-}
+
+
+
+
 
 @media (min-width:768px) {
-    
-    .Left-Right-nav-text{
+
+    .Left-Right-nav-text {
         display: block;
         display: flex;
     }
-    #The-ragister-div2{
+
+    #The-ragister-div2 {
         display: block;
         display: flex;
 
     }
 
+}
+
+@media (min-width:241px) and (max-width:772px) {
+    .Hero {
+        height: auto;
+        margin-top: 1vmin;
+    }
+}
+
+@media (min-width:772px) and (max-width:1047px) {
+    .Txt-Div h1 {
+        font-size: 4vmin;
+        font-weight: bold;
+    }
+
+    .Txt-Div h2 {
+        font-size: 2.5vmin;
+    }
+
+    .Txt-Div button {
+        padding: 1vmin;
+    }
 }

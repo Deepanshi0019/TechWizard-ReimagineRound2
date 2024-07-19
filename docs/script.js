@@ -1,74 +1,3 @@
-// Homepage script starts from here ///
-//Explore more starts from here//
-if (typeof PIXI !== "undefined") {
-  console.log("PIXI.js is loaded correctly.");
-
-  // Initialize PIXI Application
-  const app = new PIXI.Application({
-    view: document.getElementById("waveCanvas"),
-    width: window.innerWidth,
-    height: window.innerHeight,
-    transparent: true,
-    antialias: true, // Enable antialiasing for better visual quality
-  });
-
-  // Resize the canvas on window resize
-  window.addEventListener("resize", () => {
-    app.renderer.resize(window.innerWidth, window.innerHeight);
-    waveSprite.width = app.screen.width;
-    waveSprite.height = app.screen.height;
-  });
-
-  // Create the wave sprite
-  const waveTexture = PIXI.Texture.from("/Images-home/Background.avif"); // Use your background image or a suitable texture
-  const waveSprite = new PIXI.Sprite(waveTexture);
-
-  // Scale to fit the screen
-  waveSprite.width = app.screen.width;
-  waveSprite.height = app.screen.height;
-
-  // Add the sprite to the PIXI stage
-  app.stage.addChild(waveSprite);
-
-  // Create a filter to apply the wave effect
-  const vertexShader = `
-        attribute vec2 aVertexPosition;
-        attribute vec2 aTextureCoord;
-        uniform mat3 projectionMatrix;
-        varying vec2 vTextureCoord;
-
-        void main() {
-            gl_Position = vec4((projectionMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);
-            vTextureCoord = aTextureCoord;
-        }
-    `;
-
-  const fragmentShader = `
-        varying vec2 vTextureCoord;
-        uniform sampler2D uSampler;
-        uniform float time;
-
-        void main() {
-            vec2 uv = vTextureCoord;
-            uv.y += sin(uv.x * 4.0 + time) * 0.01; // Adjust the wave amplitude and frequency here
-            gl_FragColor = texture2D(uSampler, uv);
-        }
-    `;
-
-  const waveFilter = new PIXI.Filter(vertexShader, fragmentShader, {
-    time: 0,
-  });
-
-  // Apply the filter to the wave sprite
-  waveSprite.filters = [waveFilter];
-
-  // Animate the wave effect
-  app.ticker.add((delta) => {
-    waveFilter.uniforms.time += 0.01 * delta; // Adjust the wave speed here
-  });
-} else {
-  console.error("PIXI.js library is not loaded properly.");
-}
 
 const Menu_Button = document.getElementById("Menu-button");
 const OpenedNav = document.getElementById("opened-nav");
@@ -77,6 +6,7 @@ let click = false;
 
 Menu_Button.addEventListener("click", function () {
   click = !click;
+  console.log("Clicked")
 
   if (click) {
     OpenedNav.style.display = "flex";
@@ -86,72 +16,6 @@ Menu_Button.addEventListener("click", function () {
     OpenedNav.classList.remove("visible");
   }
 });
-
-const projects = document.querySelectorAll(".Project");
-const preview = document.querySelector(".Preview");
-const previewImage = document.querySelector(".Preview-img");
-
-if (!projects.length || !preview || !previewImage) {
-  console.error("One or more elements were not found:", {
-    projectsLength: projects.length,
-    preview,
-    previewImage,
-  });
-}
-
-let isInside = false;
-
-const showPreview = () => {
-  gsap.to(preview, { duration: 0.3, scale: 1 });
-};
-
-const hidePreview = () => {
-  gsap.to(preview, { duration: 0.3, scale: 0 });
-};
-
-const movePreview = (e) => {
-  const offsetX = preview.offsetWidth / 2;
-  const offsetY = preview.offsetHeight / 2;
-  gsap.to(preview, { duration: 0.1, left: `${e.clientX - offsetX}px`, top: `${e.clientY - offsetY}px` });
-};
-
-const changePreviewImage = (bgUrl) => {
-  gsap.to(previewImage, { duration: 0.3, opacity: 0, onComplete: () => {
-    previewImage.style.backgroundImage = `url(${bgUrl})`;
-    gsap.to(previewImage, { duration: 0.3, opacity: 1 });
-  }});
-};
-
-projects.forEach(project => {
-  project.addEventListener('mouseenter', (e) => {
-    showPreview();
-    movePreview(e);
-    changePreviewImage(project.getAttribute('data-bg'));
-  });
-
-  project.addEventListener('mousemove', movePreview);
-
-  project.addEventListener('mouseleave', hidePreview);
-});
-
-// Adjust preview position on window resize
-window.addEventListener('resize', () => {
-  if (isInside) {
-    // Recalculate position on resize if preview is shown
-    const currentProject = document.querySelector('.Project:hover');
-    if (currentProject) {
-      movePreview({
-        clientX: currentProject.getBoundingClientRect().left + (currentProject.offsetWidth / 2),
-        clientY: currentProject.getBoundingClientRect().top + (currentProject.offsetHeight / 2)
-      });
-    }
-  }
-});
-
-
-
-
-
 gsap.set("#Home-Section-animation", { 
   scale: 0.1, 
   opacity: 1,
@@ -168,27 +32,66 @@ gsap.to("#Home-Section-animation", {
   ease: "power2.out"
 });
 
-gsap.registerPlugin(ScrollTrigger);
 
 
 
-gsap.utils.toArray('#Container-Explore-More > div').forEach((innerDiv, i) => {
-  gsap.fromTo(innerDiv, 
-      { opacity: 0, width: "30vw", height: "20vh" }, 
-      {   
-        opacity: 1, 
-          width: "100vw", 
-          height: "40vh", 
-          scrollTrigger: {
-              trigger: innerDiv,
-              start: "top center+=100",
-              end: "top top",
-              scrub: 3,
-              markers: false,
-          }
+
+
+
+
+Shery.imageEffect("#Image-width-animation",{
+  style:3,
+  config: {"uFrequencyX":{"value":11.57,"range":[0,100]},"uFrequencyY":{"value":4.96,"range":[0,100]},"uFrequencyZ":{"value":14.45,"range":[0,100]},"geoVertex":{"range":[1,64],"value":18.7},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":1},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":false},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.18,"range":[1,5]},"scrollType":{"value":0},"noEffectGooey":{"value":true},"onMouse":{"value":1},"noise_speed":{"value":0.2,"range":[0,10]},"metaball":{"value":0.2,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0.002,"range":[0,0.1]},"noise_height":{"value":0.5,"range":[0,2]},"noise_scale":{"value":10,"range":[0,100]}},
+  debug:false,
+  
+})
+Shery.imageEffect("#Last-Image-Animation",{
+  style:2,
+  config: {"uFrequencyX":{"value":11.57,"range":[0,100]},"uFrequencyY":{"value":4.96,"range":[0,100]},"uFrequencyZ":{"value":14.45,"range":[0,100]},"geoVertex":{"range":[1,64],"value":18.7},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":1},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":false},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.18,"range":[1,5]},"scrollType":{"value":0},"noEffectGooey":{"value":true},"onMouse":{"value":1},"noise_speed":{"value":0.2,"range":[0,10]},"metaball":{"value":0.2,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0.002,"range":[0,0.1]},"noise_height":{"value":0.5,"range":[0,2]},"noise_scale":{"value":10,"range":[0,100]}}
+  ,
+  debug:false,
+  
+})
+
+
+Shery.imageEffect("#waveCanvas img",{
+  style:2,
+  config: {"resolutionXY":{"value":100},"distortion":{"value":true},"mode":{"value":-3},"mousemove":{"value":0},"modeA":{"value":1},"modeN":{"value":0},"speed":{"value":1,"range":[-500,500],"rangep":[-10,10]},"frequency":{"value":215.38,"range":[-800,800],"rangep":[-50,50]},"angle":{"value":0.5,"range":[0,3.141592653589793]},"waveFactor":{"value":1.4,"range":[-3,3]},"color":{"value":10212607},"pixelStrength":{"value":3,"range":[-20,100],"rangep":[-20,20]},"quality":{"value":5,"range":[0,10]},"contrast":{"value":1,"range":[-25,25]},"brightness":{"value":1,"range":[-1,25]},"colorExposer":{"value":0.18,"range":[-5,5]},"strength":{"value":0.2,"range":[-40,40],"rangep":[-5,5]},"exposer":{"value":8,"range":[-100,100]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":2.6424447936648416},"ignoreShapeAspect":{"value":true},"shapePosition":{"value":{"x":0,"y":0}},"shapeScale":{"value":{"x":0.5,"y":0.5}},"shapeEdgeSoftness":{"value":0,"range":[0,0.5]},"shapeRadius":{"value":0,"range":[0,2]},"currentScroll":{"value":0},"scrollLerp":{"value":0.07},"gooey":{"value":false},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.18,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":18.7},"noEffectGooey":{"value":true},"onMouse":{"value":1},"noise_speed":{"value":0.2,"range":[0,10]},"metaball":{"value":0.2,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0.002,"range":[0,0.1]},"noise_height":{"value":0.5,"range":[0,2]},"noise_scale":{"value":10,"range":[0,100]},"uFrequencyX":{"value":11.57,"range":[0,100]},"uFrequencyY":{"value":4.96,"range":[0,100]},"uFrequencyZ":{"value":14.45,"range":[0,100]}}
+  ,
+  debug:false
+
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // City Hotels animation
+  document.querySelectorAll('.City-hotels').forEach((element) => {
+    gsap.from(element, {
+      y: 90,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%",
+        end: "top 60%",
+        scrub: true
       }
-  );
+    });
+  });
+
+  document.querySelectorAll('.Txt-Div').forEach((element, index) => {
+    let direction = index % 2 === 0 ? "-100%" : "100%"; // alternate direction
+    gsap.from(element, {
+      x: direction,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: element,
+        start: "top 80%",
+        end: "top 60%",
+        scrub: true
+      }
+    });
+  });
 });
-
-
-

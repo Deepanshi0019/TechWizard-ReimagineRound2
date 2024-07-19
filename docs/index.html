@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <title>Taj Hotels</title>
@@ -15,13 +16,14 @@
 
 </head>
 
-<body class="overflow-x-hidden">
-  <div class="h-[100vh] w-[100vw]">
+<body id="main" class="overflow-x-hidden">
+  <div id="Home-Page" class="h-[100vh] w-[100vw]">
     <div id="Home-Section-animation" class="h-[100vh] w-[100vw] overflow-hidden">
 
-      <canvas id="waveCanvas"></canvas>
+       <div class="h-[100vh] w-[100vw]" id="waveCanvas">
+        <img class="h-[100%] w-[100%]" src="/Images-home/Background.avif" alt="">
+       </div>
 
-      <!-- Keep the navigation simplified for now -->
       <nav
         class="h-[60px] w-full z-[2] absolute gap-3 top-0 flex justify-between md:justify-evenly items-center px-[4vmin] nanum-myeongjo-regular text-white">
         <div class="Left-Right-nav-text pl-[2vmin] h-auto w-auto justify-center items-center gap-[9vmin] text-[3vmin]">
@@ -50,13 +52,7 @@
         <h1 class="text-[8vmin] sm:text-[5vmin]">Events</h1>
         <h1 class="text-[8vmin] sm:text-[5vmin]">Explore More</h1>
       </div>
-      <div id="Home-page-section" class="h-[100vh]  w-[100vw] flex flex-col justify-center items-center" style="
-            background-image: url();
-            background-position: center;
-            background-size: cover;
-            object-fit: cover;
-            background-repeat: no-repeat;
-          ">
+      <div id="Home-page-section" class="h-[100vh]  w-[100vw] flex flex-col justify-center items-center">
         <div id="Text-div"
           class="h-[60%] w-auto  flex mb-[8vmin] flex-col text-white justify-center items-center bodoni-moda-sc-">
           <h1 class="text-[10vmin]">Taj Hotels</h1>
@@ -82,75 +78,144 @@
       </div>
     </div>
   </div>
+  <div id="Explore-More-Page" class="w-[100vw]  h-[500vh] flex flex-col nanum-myeongjo-regular">
 
+    <div class="w-[100vw] h-[100vh] ">
+      <div class="Hero w-[100vw] h-[100vh] mx-4 px-[3vmin]  mt-[8vw] flex  gap-[10vmin]">
+        <div id="City-hotels" class="City-hotels w-[60vmin] h-[60vmin] ">
+          <h5>01.</h5>
+          <h1 id="Text-Anime" class="text-[2vmin] font-bold py-1">City Hotels.</h1>
+          <p class="leading-[1] opacity-[.5] py-2">Renowned as city landmarks, Taj Hotels welcome guests with an
+            extraordinary level of service</p>
+          <div class="City-Hotel-img w-[100%] h-[60vmin] mt-2 ">
+            <img id="Image-width-animation" class="h-full w-full object-cover" src="/Images-home/image4.jpg" alt="">
+          </div>
+        </div>
+        <div class="w-1/2 h-[72.5vmin] hidden  md:flex justify-end border-l-[5px]  border-[#AD8B3A]">
+            <div class="Txt-Div h-full w-full  p-[5vmin]">
+               <h1 class="text-[6vmin]">Explore Our City Hotels</h1>
+               <h4>HAVENS OF LUXURY
+                AND COMFORT ----</h4>
+                <h2 class="text-[3vmin] pt-[4vmin]">Renowned as city landmarks, Taj Hotels welcome guests with an extraordinary level of service, comfort and warmth. Each of our luxury hotels sets an example of magnificence with tastefully designed spaces, spectacular views and world class amenities. Whether catering to business travellers or hosting.</h2>
 
-  
-  <div id="Container-Explore-More" class="h-auto w-full nanum-myeongjo-regular  bg-white flex flex-col space-y-9">
-    <div id="inner-div-1" class="h-[50vh] w-[50vw] p-5 flex justify-center items-center m-4  border-b-2 border-[#AD8B3A]">
+                <button class="p-[2.5vmin] bg-[#AD8B3A] hover:bg-inherit border border-[#AD8B3A] ease-linear duration-75 rounded-full mt-[5vmin]">Explore >> </button>
+            </div>
+        </div>
+
+      </div>
       
-       <img class="w-auto rounded-lg m-3 h-full" src="/Images-home/image4.jpg" alt="">
-       <div class="Text-div-MORE hidden  w-[70%] p-[4vmin] h-full md:flex flex-col justify-start items-center ">
-    <h2 class="text-[8vmin] font-semibold">City Hotels</h2>
-    <p class="text-[100%]">Renowned as city landmarks, Taj Hotels welcome guests with an extraordinary level of service</p>
-       </div>
     </div>
-   
-    <div id="inner-div-2" class="h-[50vh] w-[50vw] p-5 flex justify-center items-center m-4  border-b-2 border-[#AD8B3A]">
+    <div class="w-[100vw] h-[100vh] ">
+      <div class="Hero w-[100vw] h-[100vh] mx-4 px-[3vmin]  mt-[8vw] flex flex-row-reverse  gap-[10vmin]">
+        <div id="City-hotels" class="City-hotels w-[60vmin] h-[60vmin] pr-[2vmin]">
+          <h5>02.</h5>
+          <h1 id="Text-Anime" class="text-[2vmin] font-bold py-1">IDYLLIC RESORTS.</h1>
+          <p class="leading-[1] opacity-[.5] py-2">With breathtaking vistas, awe-inspiring experiences and gracious service, Taj Resorts are lush retreats in the most picturesque locations </p>
+          <div class="City-Hotel-img w-[100%] h-[60vmin] mt-2 ">
+            <img id="Image-width-animation" class="h-full w-full object-cover" src="/Images-home/Exp2.jpg" alt="">
+          </div>
+        </div>
+        <div class="w-1/2 h-[72.5vmin] hidden  md:flex  justify-end border-r-[5px]  border-[#AD8B3A]">
+            <div class="Txt-Div h-full w-full pl-0  p-[5vmin]">
+               <h1 class="text-[6vmin]">Unwind in Luxury: Idyllic Resorts</h1>
+               <h4>SURREAL ESCAPES
+                AMIDST PRISTINE NATURE</h4>
+                <h2 class="text-[3vmin] pt-[4vmin]">With breathtaking vistas, awe-inspiring experiences and gracious service, Taj Resorts are lush retreats in the most picturesque locations across the globe. Stretched languorously beside sun-drenched beaches or ensconced within the wonder of the mountains, these havens redefine gracious living in idyllic getaways. Enjoy refreshing, luxury resort service in exotic locales – escapes that remain etched in memories.</h2>
+
+                <button class="p-[2.5vmin] bg-[#AD8B3A] hover:bg-inherit border border-[#AD8B3A] ease-linear duration-75 rounded-full mt-[5vmin]">Explore >> </button>
+            </div>
+        </div>
+
+      </div>
       
-       <img class="w-auto rounded-lg m-3 h-full" src="/Images-home/image4.jpg" alt="">
-       <div class="Text-div-MORE hidden  w-[70%] p-[4vmin] h-full md:flex flex-col justify-start items-center">
-    <h2 class="text-[8vmin] font-semibold">City Hotels</h2>
-    <p class="text-[100%]">Renowned as city landmarks, Taj Hotels welcome guests with an extraordinary level of service</p>
-       </div>
     </div>
-   
-    <div id="inner-div-3" class="h-[50vh] w-[50vw] p-5 flex justify-center items-center m-4  border-b-2 border-[#AD8B3A]">
+    <div class="w-[100vw] h-[100vh] ">
+      <div class="Hero w-[100vw] h-[100vh] mx-4 px-[3vmin]  mt-[8vw] flex  gap-[10vmin]">
+        <div id="City-hotels" class="City-hotels w-[60vmin] h-[60vmin] ">
+          <h5>03.</h5>
+          <h1 id="Text-Anime" class="text-[2vmin] font-bold py-1">Living Places.</h1>
+          <p class="leading-[1] opacity-[.5] py-2">Rare and historic, Taj palaces transport you to an era of grandeur, steeped in an authentically royal narrative. Splendid design.</p>
+          <div class="City-Hotel-img w-[100%] h-[60vmin] mt-2 ">
+            <img id="Image-width-animation" class="h-full w-full object-cover" src="/Images-home/exp3.jpg" alt="">
+          </div>
+        </div>
+        <div class="w-1/2 h-[72.5vmin] hidden  md:flex justify-end border-l-[5px]  border-[#AD8B3A]">
+            <div class="Txt-Div h-full w-full  p-[5vmin]">
+               <h1 class="text-[6vmin]">Living Places: Your Home, Your Haven
+              </h1>
+               <h4>A WORLD OF
+                AUTHENTIC ROYAL GRANDEUR</h4>
+                <h2 class="text-[3vmin] pt-[4vmin]">Rare and historic, Taj palaces transport you to an era of grandeur, steeped in an authentically royal narrative. Splendid design, exotic art and beautiful gardens seamlessly converge, crafting mesmerising experiences that embody the grandiosity of bygone kings and queens. It is the timeless stories, eternal quests, and regal elegance that come to life in the embrace of these architectural marvels.</h2>
+
+                <button class="p-[2.5vmin] bg-[#AD8B3A] hover:bg-inherit border border-[#AD8B3A] ease-linear duration-75 rounded-full mt-[5vmin]">Explore >> </button>
+            </div>
+        </div>
+
+      </div>
       
-       <img class="w-auto rounded-lg m-3 h-full" src="/Images-home/image4.jpg" alt="">
-       <div class="Text-div-MORE hidden  w-[70%] p-[4vmin] h-full md:flex flex-col justify-start items-center">
-    <h2 class="text-[8vmin] font-semibold">City Hotels</h2>
-    <p class="text-[100%]">Renowned as city landmarks, Taj Hotels welcome guests with an extraordinary level of service</p>
-       </div>
     </div>
-   
-    <div id="inner-div-4" class="h-[50vh] w-[50vw] p-5 flex justify-center items-center m-4  border-b-2 border-[#AD8B3A]">
+    <div class="w-[100vw] h-[100vh] ">
+      <div class="Hero w-[100vw] h-[100vh] mx-4 px-[3vmin]  mt-[8vw] flex flex-row-reverse  gap-[10vmin]">
+        <div id="City-hotels" class="City-hotels w-[60vmin] h-[60vmin] pr-[2vmin]">
+          <h5>04.</h5>
+          <h1 id="Text-Anime" class="text-[2vmin] font-bold py-1">New Openings.</h1>
+          <p class="leading-[1] opacity-[.5] py-2">Joins at our newest hotels as we set foot in new destination and create unmissable landmarks.</p>
+          <div class="City-Hotel-img w-[100%] h-[60vmin] mt-2 ">
+            <img id="Image-width-animation" class="h-full w-full object-cover" src="/Images-home/Exp5.webp" alt="">
+          </div>
+        </div>
+        <div class="w-1/2 h-[72.5vmin] hidden  md:flex  justify-end border-r-[5px]  border-[#AD8B3A]">
+            <div class="Txt-Div h-full w-full pl-0  p-[5vmin]">
+               <h1 class="text-[6vmin]">Join the Adventure: Discover New Openingsh1>
+               <h4>OUR NEW HOTELS</h4>
+                <h2 class="text-[3vmin] pt-[4vmin]">Tree of Life Resorts offer a discerning traveller a utopia far removed from the pressures of everyday living, and a chance to enjoy the essence of authentic India: her friendliness, hospitality and serenely balanced lifestyle.</h2>
+
+                <button class="p-[2.5vmin] bg-[#AD8B3A] hover:bg-inherit border border-[#AD8B3A] ease-linear duration-75 rounded-full mt-[5vmin]">Explore >> </button>
+            </div>
+        </div>
+
+      </div>
       
-       <img class="w-auto rounded-lg m-3 h-full" src="/Images-home/image4.jpg" alt="">
-       <div class="Text-div-MORE hidden  w-[70%] p-[4vmin] h-full md:flex flex-col justify-start items-center">
-    <h2 class="text-[8vmin] font-semibold">City Hotels</h2>
-    <p class="text-[100%]">Renowned as city landmarks, Taj Hotels welcome guests with an extraordinary level of service</p>
-       </div>
     </div>
-    <div id="inner-div-5" class="h-[50vh] w-[50vw] p-5 flex justify-center items-center m-4  border-b-2 border-[#AD8B3A]">
+    <div class="w-[100vw] h-[100vh] ">
+      <div class="Hero w-[100vw] h-[100vh] mx-4 px-[3vmin]  mt-[8vw] flex  gap-[10vmin]">
+        <div id="City-hotels" class="City-hotels w-[60vmin] h-[60vmin] ">
+          <h5>05.</h5>
+          <h1 id="Text-Anime" class="text-[2vmin] font-bold py-1">ENCHANTING SAFARIS.</h1>
+          <p class="leading-[1] opacity-[.5] py-2">Earthy lodges, untainted excursions, awe-inspiring encounters with the wilderness – Taj Safaris serve as the epitome of wildlife adventures across the globe.</p>
+          <div class="City-Hotel-img w-[100%] h-[60vmin] mt-2 ">
+            <img id="Last-Image-Animation" class="h-full w-full object-cover" src="/Images-home/Nchas.jpg" alt="">
+          </div>
+        </div>
+        <div class="w-1/2 h-[72.5vmin] hidden  md:flex justify-end border-l-[5px]  border-[#AD8B3A]">
+            <div class="Txt-Div h-full w-full  p-[5vmin]">
+               <h1 class="text-[6vmin]">Explore the Magic of Nature: Enchanting Safaris</h1>
+               <h4>LUXURY STAYS
+                MEET UNEXPLORED WILDERNESS</h4>
+                <h2 class="text-[3vmin] pt-[4vmin]">Earthy lodges, untainted excursions, awe-inspiring encounters with the wilderness – Taj Safaris serve as the epitome of wildlife adventures across the globe. Observe wild animals in their natural habitat, cradled by the imposing jungles of the Indian subcontinent. With ancient, towering trees, choruses of forest birds and the calls of lurking wild animals, these are travel experiences unlike any other. At every step experts will guide and inform you, and at the end of each adventure, you return to the luxurious Taj safari camp with its inimitable warmth and legendary service</h2>
+
+                <button class="p-[2.5vmin] bg-[#AD8B3A] hover:bg-inherit border border-[#AD8B3A] ease-linear duration-75 rounded-full mt-[5vmin]">Explore >> </button>
+            </div>
+        </div>
+
+      </div>
       
-       <img class="w-auto rounded-lg m-3 h-full" src="/Images-home/image4.jpg" alt="">
-       <div class="Text-div-MORE hidden  w-[70%] p-[4vmin] h-full md:flex flex-col justify-start items-center">
-    <h2 class="text-[8vmin] font-semibold">City Hotels</h2>
-    <p class="text-[100%]">Renowned as city landmarks, Taj Hotels welcome guests with an extraordinary level of service</p>
-       </div>
     </div>
     
-  </div>
-  
-  <div class="h-[100vh] w-[100vw]">
 
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-  <!-- Load GSAP and ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
-      integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
-      integrity="sha512-A64Nik4Ql7/W/PJk2RNOmVyC/Chobn5TY08CiKEX50Sdw+33WTOpPJ/63bfWPl0hxiRv1trPs5prKO8CpA7VNQ=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
-  <!-- Load Locomotive Scroll -->
+    integrity="sha512-A64Nik4Ql7/W/PJk2RNOmVyC/Chobn5TY08CiKEX50Sdw+33WTOpPJ/63bfWPl0hxiRv1trPs5prKO8CpA7VNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
   <script src="https://unpkg.com/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
-  <script src="script.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
