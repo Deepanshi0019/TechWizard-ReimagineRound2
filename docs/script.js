@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
             number: "02.",
             heading: "IDYLLIC RESORTS.",
             para: "With breathtaking vistas, awe-inspiring experiences and gracious service, Taj Resorts are lush retreats in the most picturesque locations",
-            imgSrc: "/Images-home/image4.jpg",
+            imgSrc: "/images/image4.jpg",
             textDiv: {
                 heading: "Unwind in Luxury: Idyllic Resorts",
                 subheading: "SURREAL ESCAPES AMIDST PRISTINE NATURE",
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
             number: "03.",
             heading: "Living Places.",
             para: "Rare and historic, Taj palaces transport you to an era of grandeur, steeped in an authentically royal design.",
-            imgSrc: "/Images-home/exp3.jpg",
+            imgSrc: "/images/exp3.jpg",
             textDiv: {
                 heading: "Living Places: Your Home, Your Haven",
                 subheading: "A WORLD OF AUTHENTIC ROYAL GRANDEUR",
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
             number: "04.",
             heading: "New Openings.",
             para: "Joins at our newest hotels as we set foot in new destination and create unmissable landmarks.",
-            imgSrc: "/Images-home/Exp5.webp",
+            imgSrc: "/images/Exp5.webp",
             textDiv: {
                 heading: "Join the Adventure: Discover New Openings",
                 subheading: "OUR NEW HOTELS",
@@ -150,11 +150,11 @@ document.addEventListener('DOMContentLoaded', function () {
             number: "05.",
             heading: "ENCHANTING SAFARIS.",
             para: "Earthy lodges, untainted excursions, awe-inspiring encounters with the wilderness – Taj Safaris serve as the epitome of wildlife adventures across the globe.",
-            imgSrc: "/Images-home/Nchas.jpg",
+            imgSrc: "/images/Nchas.jpg",
             textDiv: {
                 heading: "Explore the Magic of Nature: Enchanting Safaris",
                 subheading: "LUXURY STAYS MEET UNEXPLORED WILDERNESS",
-                description: "Earthy lodges, untainted excursions, awe-inspiring encounters with the wilderness – Taj Safaris serve as the epitome of wildlife adventures across the globe. Observe wild animals in their natural habitat, cradled by the imposing jungles of the Indian subcontinent. With ancient, towering trees, choruses of forest birds and the calls of lurking wild animals, these are travel experiences unlike any other. At every step experts will guide and inform you, and at the end of each adventure, you return to the luxurious Taj safari camp with its inimitable warmth and legendary service."
+                description: "Earthy lodges, untainted excursions, awe-inspiring encounters with the wilderness – Taj Safaris serve as the epitome of wildlife adventures across the globe. Observe wild animals in their natural habitat, cradled by the imposing jungles of the Indian subcontinent. With ancient, towering trees, choruses of forest birds and the calls of lurking wild animals."
             },
             button: "Explore >>",
             id:"Last-Image-Animation"
@@ -239,7 +239,107 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 window.addEventListener('load', applyImageEffects);
 
+ /// Latika js starts from here 
+ 
+ gsap.to(".slide",{
+     scrollTrigger: {
+        trigger: ".dining",
+        start: "top top",
+        end: "bottom bottom",
+        scrub:1
+    },
+    xPercent:-400,
+    ease:Power4
+})
+gsap.to(".slides",{
+    scrollTrigger: {
+        trigger: ".dine",
+        start: "top top",
+        end: "bottom bottom",
+        scrub:1
+    },
+    xPercent:-310,
+    ease:Power4
+})
 
+// 
+var elem = document.querySelectorAll(".elem");
+var events = document.querySelector(".events");
+var currentIndex = 0;
+var hoverInterval;
+var isHovering = false;
+var lastHoveredElement = null;
 
+elem.forEach(function(e) {
+    e.addEventListener("mouseenter", function() {
+        isHovering = true;
+        clearInterval(hoverInterval); // Stop the automatic hover sequence
+        if (lastHoveredElement) {
+            removeHoverStyles(lastHoveredElement); // Remove hover styles from the last hovered element
+        }
+        applyHoverStyles(e);
+        lastHoveredElement = e;
+    });
+
+    e.addEventListener("mouseleave", function() {
+        isHovering = false;
+        removeHoverStyles(e);
+        startAutomaticHover(); // Restart the automatic hover sequence
+    });
+});
+
+function applyHoverStyles(element) {
+    var bgimg = element.getAttribute("data-img");
+    events.style.backgroundImage = `url(${bgimg})`;
+    element.querySelector(".moving").style.transform = "translate(0, -50%) scaleY(1)";
+    var movingInElements = element.querySelectorAll(".moving .moving-in h5");
+    movingInElements.forEach(function(movingInElement) {
+        movingInElement.style.opacity = "1";
+    });
+    var h2Element = element.querySelector("h2");
+    h2Element.style.fontFamily = "'Freight Italic', serif"; // Change to the italic variant and fallback to serif
+    h2Element.style.color = "black"; // Change text color to black
+}
+
+function removeHoverStyles(element) {
+    if (element) {
+        element.querySelector(".moving").style.transform = "translate(0, -50%) scaleY(0)";
+        var movingInElements = element.querySelectorAll(".moving .moving-in h5");
+        movingInElements.forEach(function(movingInElement) {
+            movingInElement.style.opacity = "0";
+        });
+        var h2Element = element.querySelector("h2");
+        h2Element.style.fontFamily = "'Freight Normal', sans-serif"; // Revert to normal variant and fallback to sans-serif
+        h2Element.style.color = "white"; // Revert text color
+    }
+}
+
+function startAutomaticHover() {
+    clearInterval(hoverInterval); // Clear any existing interval
+    hoverInterval = setInterval(function() {
+        if (!isHovering) {
+            var currentElem = elem[currentIndex];
+            if (lastHoveredElement) {
+                removeHoverStyles(lastHoveredElement); // Remove hover styles from the last hovered element
+            }
+            applyHoverStyles(currentElem);
+            lastHoveredElement = currentElem;
+
+            setTimeout(function() {
+                if (!isHovering) { // Only remove styles if not hovering manually
+                    removeHoverStyles(currentElem);
+                }
+            }, 1500); // Keep hover styles for 1.5 seconds
+
+            currentIndex = (currentIndex + 1) % elem.length;
+        }
+    }, 2000); // Change element every 2 seconds
+}
+
+startAutomaticHover(); // Start the automatic hover sequence
+/// Latika js ends from here 
 
 });
+
+
+

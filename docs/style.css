@@ -40,6 +40,7 @@ html {
 
 body {
     overflow-x: hidden;
+     scroll-behavior: smooth;
 }
 
 
@@ -153,6 +154,116 @@ body {
     height: 100vh;
 }
 
+  /* Latika Css starts from here event / dining section */
+  :root{
+    --copper: #AD8B3A;
+    --black: black;
+    --white: white;
+}
+body[theme="black"]{
+    background-color: var(--black);
+}
+body[theme="black"] .section{
+    color: var(--copper);
+}
+body[theme="white"]{
+    background-color: var(--white);
+}
+body[theme="white"] .section{
+    color: var(--black);
+}
+.slide .text{
+    z-index: 2;
+}
+.bw-to-color {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.bw-to-color:hover {
+    filter: grayscale(0%);
+}
+
+/* EVENTS */
+.events{
+    background-size: cover;
+    background-position: center;
+    transition: all ease 0.5s;
+}
+.elem{
+    cursor: default;
+    transition: background-image all 1s ease, background-color all 1s ease;
+}
+.elem .blur{
+    position: absolute;
+    width: 40%;
+    background: linear-gradient(to right, #ad8a3ae8, #AD8B3A, #ad8a3ae8);
+    box-shadow: 10px 0px 20px 20px #AD8B3A, -7px 0px 10px 100px #AD8B3A;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: 8;
+    transform: translate(-50%, -50%);
+}
+.elem h1{
+    transition: all ease-out 0.5s;
+}
+.elem h2{
+    position: relative;
+    z-index: 9;
+    line-height: 10vmin;
+    font-family: "Freight Normal";
+    transition: all 0.5s ease;
+}
+.elem .moving{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%)scaleY(0);
+    padding: 0.2vmin 0;
+    transition: all ease 0.3s;
+    overflow: hidden;
+
+}
+.elem .moving .moving-in{
+    display: inline-block;
+    animation-name: moving;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.elem .moving .moving-in h5{
+    color: black;
+    display: inline-block;
+    font-size: 2.5vmin;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    transition: all ease 0.3s;
+    transition-delay: 0.2s;
+    margin-right: 20px;
+    font-weight: 500;
+    opacity: 0;
+}
+.elem:hover .moving{
+    transform: translate(0,-50%) scaleY(1);
+}
+.elem:hover .moving h5{
+    opacity: 1;
+}
+.elem:hover h2{
+    font-family: "Freight Italic";
+    color: black;
+    transition: all 0.5s ease; 
+}
+@keyframes moving {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+  /* Latika Css ends from here event / dining section */
+
 
 @media (min-width:768px) {
 
@@ -198,3 +309,4 @@ body {
         padding: 1vmin;
     }
 }
+
