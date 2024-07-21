@@ -15,11 +15,11 @@ gsap.to(".slides",{
         end: "bottom bottom",
         scrub:1
     },
-    xPercent:-310,
+    xPercent:-300,
     ease:Power4
 })
 
-// 
+// events
 var elem = document.querySelectorAll(".elem");
 var events = document.querySelector(".events");
 var currentIndex = 0;
