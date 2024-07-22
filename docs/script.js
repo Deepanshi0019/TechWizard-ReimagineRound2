@@ -5,21 +5,17 @@ var swiper = new Swiper(".mySwiper", {
     autoplay: {
         delay: 2500,
         disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-  });
+    },
+});
 
+// Get all deal-count elements
+var dealCounts = document.querySelectorAll('.deal-count');
 
-  const dealCountDiv = document.querySelector(".deal-count");
-
-        // Add event listeners to pause and resume the animation
-        dealCountDiv.addEventListener("mouseenter", () => {
-            swiper.autoplay.stop();
-        });
-
-        dealCountDiv.addEventListener("mouseleave", () => {
-            swiper.autoplay.start();
-        });
+dealCounts.forEach(function(dealCount) {
+    dealCount.addEventListener('mouseover', function() {
+        swiper.autoplay.stop();
+    });
+    dealCount.addEventListener('mouseout', function() {
+        swiper.autoplay.start();
+    });
+});
