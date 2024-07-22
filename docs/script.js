@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
             number: "02.",
             heading: "IDYLLIC RESORTS.",
             para: "With breathtaking vistas, awe-inspiring experiences and gracious service, Taj Resorts are lush retreats in the most picturesque locations",
-            imgSrc: "/images/image4.jpg",
+            imgSrc: "https://i.postimg.cc/y65mQcyk/image4.jpg",
             textDiv: {
                 heading: "Unwind in Luxury: Idyllic Resorts",
                 subheading: "SURREAL ESCAPES AMIDST PRISTINE NATURE",
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
             number: "03.",
             heading: "Living Places.",
             para: "Rare and historic, Taj palaces transport you to an era of grandeur, steeped in an authentically royal design.",
-            imgSrc: "/images/exp3.jpg",
+            imgSrc: "https://i.postimg.cc/HxkwKtN7/exp3.jpg",
             textDiv: {
                 heading: "Living Places: Your Home, Your Haven",
                 subheading: "A WORLD OF AUTHENTIC ROYAL GRANDEUR",
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
             number: "04.",
             heading: "New Openings.",
             para: "Joins at our newest hotels as we set foot in new destination and create unmissable landmarks.",
-            imgSrc: "/images/Exp5.webp",
+            imgSrc: "https://i.postimg.cc/0NfGc4Vs/Exp5.webp",
             textDiv: {
                 heading: "Join the Adventure: Discover New Openings",
                 subheading: "OUR NEW HOTELS",
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
             number: "05.",
             heading: "ENCHANTING SAFARIS.",
             para: "Earthy lodges, untainted excursions, awe-inspiring encounters with the wilderness – Taj Safaris serve as the epitome of wildlife adventures across the globe.",
-            imgSrc: "/images/Nchas.jpg",
+            imgSrc: "https://i.postimg.cc/nrsvVhpF/Nchas.jpg",
             textDiv: {
                 heading: "Explore the Magic of Nature: Enchanting Safaris",
                 subheading: "LUXURY STAYS MEET UNEXPLORED WILDERNESS",
