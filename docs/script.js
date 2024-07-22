@@ -7,3 +7,15 @@ var swiper = new Swiper(".mySwiper", {
         disableOnInteraction: false,
       },
   });
+
+
+  const dealCountDiv = document.querySelector(".deal-count");
+
+        // Add event listeners to pause and resume the animation
+        dealCountDiv.addEventListener("mouseenter", () => {
+            swiper.autoplay.stop();
+        });
+
+        dealCountDiv.addEventListener("mouseleave", () => {
+            swiper.autoplay.start();
+        });

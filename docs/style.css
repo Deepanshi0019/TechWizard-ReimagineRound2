@@ -14,3 +14,13 @@
  .img:hover .overlay {
     transform: translateY(0);
 } 
+.deal-count .img:hover img{
+    z-index: -0;
+    opacity: 0;
+}
+.deal-count .img:hover video{
+    z-index: 10;
+}
+.deal-count {
+    position: relative;
+}
