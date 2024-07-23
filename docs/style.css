@@ -130,7 +130,7 @@ body[theme="white"] .section{
 }
 .icon-hover:hover {
     transform: scale(1.5);
-    color: #feca4f;
+    color: whitesmoke;
 }
 /* FOOTER */
 
@@ -151,7 +151,7 @@ body[theme="white"] .section{
 #blur-left {
     height: 100%;
     width: 30%;
-    background: linear-gradient(to right, black, transparent);
+    background: linear-gradient(to right, #AD8B3A, transparent);
 
     position: absolute;
     top: 0;
@@ -161,7 +161,7 @@ body[theme="white"] .section{
 #blur-right {
     height: 100%;
     width: 30%;
-    background: linear-gradient(to right, transparent, black);
+    background: linear-gradient(to right, transparent, #AD8B3A);
     position: absolute;
     top: 0;
     right: 0;
