@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     window.addEventListener('scroll', () => {
         const letters = document.querySelectorAll('.description-letter');
-        const triggerPoint = window.innerHeight / 5 * 4; // Adjust the trigger point as needed
+        const triggerPoint = window.innerHeight / 5 * 4; 
     
         letters.forEach((letter, index) => {
             const letterTop = letter.getBoundingClientRect().top;
@@ -218,7 +218,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     
-        // Animation for city hotel and text div
         const cityHotels = document.querySelectorAll('.City-hotels');
         const textDivs = document.querySelectorAll('.Txt-Div');
     
