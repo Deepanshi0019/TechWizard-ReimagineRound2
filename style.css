@@ -133,6 +133,66 @@ top: 0;
 z-index: 999;
 width: 100%;
   }
+  .description-letter {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.city-hotel-animate {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.city-hotel-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.description-letter {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.city-hotel-animate {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.city-hotel-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 #Home-Section-animation {
     transform: scale(0.1);
     opacity: 1;
