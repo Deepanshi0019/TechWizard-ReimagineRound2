@@ -172,59 +172,76 @@ document.addEventListener('DOMContentLoaded', function () {
 
     Container.innerHTML = "";
 
+    const createDescriptionSpans = (description) => {
+        return description.split('').map(char => `<span class="description-letter">${char}</span>`).join('');
+    };
+    
     data.forEach((divData, index) => {
         let newDiv = document.createElement("div");
-        newDiv.classList.add("w-[100vw]","Responsive-Explore");
-
-        if (index % 2 === 0) {
-            // Even index logic
-            newDiv.innerHTML = `
-                <div class="Hero w-[100vw] mx-4 px-[3vmin]  mt-[8vw] flex  gap-[10vmin]">
-                    <div id="City-hotels" class="City-hotels w-[60vmin] h-[60vmin] ">
-                        <h5>${divData.number}</h5>
-                        <h1 id="Text-Anime" class="text-[2vmin] font-bold py-1">${divData.heading}</h1>
-                        <p class="leading-[1] opacity-[.5] py-2">${divData.para}</p>
-                        <div class="City-Hotel-img w-[100%] h-[60vmin] mt-2 ">
-                            <img id="${divData.id}" class="h-full w-full object-cover" src="${divData.imgSrc}" alt="">
-                        </div>
-                    </div>
-                    <div class="w-1/2 h-[72.5vmin] hidden  md:flex justify-end border-l-[5px]  border-[#AD8B3A]">
-                        <div class="Txt-Div h-full w-full  p-[5vmin]">
-                            <h1 class="text-[6vmin]">${divData.textDiv.heading}</h1>
-                            <h4>${divData.textDiv.subheading}</h4>
-                            <h2 class="text-[3vmin] pt-[4vmin]">${divData.textDiv.description}</h2>
-                            <button class="p-[2.5vmin] bg-[#AD8B3A] hover:bg-inherit border border-[#AD8B3A] ease-linear duration-75 rounded-full mt-[5vmin]">${divData.button}</button>
-                        </div>
+        newDiv.classList.add("w-[100vw]", "Responsive-Explore");
+    
+        newDiv.innerHTML = `
+            <div class="Hero w-[100vw] mx-4 px-[3vmin] mt-[8vw] flex ${index % 2 === 0 ? '' : 'flex-row-reverse'} gap-[10vmin]">
+                <div id="City-hotels" class="City-hotels w-[60vmin] h-[60vmin] ${index % 2 === 0 ? '' : 'pr-[2vmin]'}">
+                    <h5>${divData.number}</h5>
+                    <h1 id="Text-Anime" class="text-[2vmin] font-bold py-1">${divData.heading}</h1>
+                    <p class="leading-[1] opacity-[.5] py-2">${divData.para}</p>
+                    <div class="City-Hotel-img w-[100%] h-[60vmin] mt-2">
+                        <img id="${divData.id}" class="h-full w-full object-cover" src="${divData.imgSrc}" alt="">
                     </div>
                 </div>
-            `;
-        } else{
-            newDiv.innerHTML = `
-                  <div class="Hero w-[100vw]  mx-4 px-[3vmin]  mt-[8vw] flex flex-row-reverse  gap-[10vmin]">
-            <div id="City-hotels" class="City-hotels w-[60vmin] h-[60vmin] pr-[2vmin]">
-              <h5>${divData.number}</h5>
-              <h1 id="Text-Anime" class="text-[2vmin] font-bold py-1">${divData.heading}</h1>
-              <p class="leading-[1] opacity-[.5] py-2">${divData.para}</p>
-              <div class="City-Hotel-img w-[100%] h-[60vmin] mt-2 ">
-                <img id="${divData.id}" class="h-full w-full object-cover" src="${divData.imgSrc}" alt="">
-              </div>
-            </div>
-            <div class="w-1/2 h-[72.5vmin] hidden  md:flex  justify-end border-r-[5px]  border-[#AD8B3A]">
-                <div class="Txt-Div h-full w-full pl-0  p-[5vmin]">
-                   <h1 class="text-[6vmin]">${divData.textDiv.heading}</h1>
-                   <h4>${divData.textDiv.subheading}</h4>
-                    <h2 class="text-[3vmin] pt-[4vmin]">${divData.textDiv.description}</h2>
-    
-                    <button class="p-[2.5vmin] bg-[#AD8B3A] hover:bg-inherit border border-[#AD8B3A] ease-linear duration-75 rounded-full mt-[5vmin]">Explore >> </button>
+                <div class="w-1/2 h-[72.5vmin] hidden md:flex justify-end ${index % 2 === 0 ? 'border-l-[5px]' : 'border-r-[5px]'} border-[#AD8B3A]">
+                    <div class="Txt-Div h-full w-full p-[5vmin]">
+                        <h1 class="text-[6vmin]">${divData.textDiv.heading}</h1>
+                        <h4>${divData.textDiv.subheading}</h4>
+                        <h2 class="text-[3vmin] pt-[4vmin]">${createDescriptionSpans(divData.textDiv.description)}</h2>
+                        <button class="p-[2.5vmin] bg-[#AD8B3A] hover:bg-inherit border border-[#AD8B3A] ease-linear duration-75 rounded-full mt-[5vmin]">${divData.button}</button>
+                    </div>
                 </div>
             </div>
+        `;
     
-          </div>
-            `;
-        }
-
         Container.appendChild(newDiv);
     });
+    
+    window.addEventListener('scroll', () => {
+        const letters = document.querySelectorAll('.description-letter');
+        const triggerPoint = window.innerHeight / 5 * 4; // Adjust the trigger point as needed
+    
+        letters.forEach((letter, index) => {
+            const letterTop = letter.getBoundingClientRect().top;
+    
+            if (letterTop < triggerPoint) {
+                letter.style.opacity = Math.min((triggerPoint - letterTop) / 50, 1);
+            } else {
+                letter.style.opacity = 0;
+            }
+        });
+    
+        // Animation for city hotel and text div
+        const cityHotels = document.querySelectorAll('.City-hotels');
+        const textDivs = document.querySelectorAll('.Txt-Div');
+    
+        cityHotels.forEach(cityHotel => {
+            const cityHotelTop = cityHotel.getBoundingClientRect().top;
+            if (cityHotelTop < triggerPoint) {
+                cityHotel.classList.add('show');
+            } else {
+                cityHotel.classList.remove('show');
+            }
+        });
+    
+        textDivs.forEach(textDiv => {
+            const textDivTop = textDiv.getBoundingClientRect().top;
+            if (textDivTop < triggerPoint) {
+                textDiv.classList.add('fade-in');
+            } else {
+                textDiv.classList.remove('fade-in');
+            }
+        });
+    });
+    
+    
     function applyImageEffects() {
 
     Shery.imageEffect("#Image-width-animation", {
@@ -368,5 +385,3 @@ function startAutomaticHover() {
 startAutomaticHover(); // Start the automatic hover sequence
 
 });
-
-    
