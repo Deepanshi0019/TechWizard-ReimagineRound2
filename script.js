@@ -11,23 +11,29 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     });
 
-    const Menu_Button = document.getElementById("Menu-button");
-    const OpenedNav = document.getElementById("opened-nav");
+        const Menu_Button = document.querySelector("#Menu-button");
+        const OpenedNav = document.querySelector("#opened-nav");
+      
+        Menu_Button.addEventListener("click", function () {
+          OpenedNav.classList.toggle("visible");
+      
+          // Animate text items one by one
+          if (OpenedNav.classList.contains("visible")) {
+            const navItems = OpenedNav.querySelectorAll(".nav-item");
+            navItems.forEach((item, index) => {
+              item.style.animationDelay = `${index * 0.1}s`;
+              item.classList.add("visible");
+            });
+          } else {
+            const navItems = OpenedNav.querySelectorAll(".nav-item");
+            navItems.forEach((item) => {
+              item.classList.remove("visible");
+            });
+          }
+        });
+      
+      
 
-    let click = false;
-
-    Menu_Button.addEventListener("click", function () {
-        click = !click;
-        console.log("Clicked")
-
-        if (click) {
-            OpenedNav.style.display = "flex";
-            OpenedNav.classList.add("visible");
-        } else {
-            OpenedNav.style.display = "none";
-            OpenedNav.classList.remove("visible");
-        }
-    });
     gsap.set("#Home-Section-animation", {
         scale:0.1,
         opacity: 1,
